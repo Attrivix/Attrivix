@@ -49,7 +49,7 @@
 
   .logo {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--navy);
     letter-spacing: 0.01em;
   }
@@ -765,6 +765,7 @@
 <!-- NAV -->
 <nav>
   <div class="logo">Attri<span>vix</span></div>
+  <a href="blog.html">Intel Brief</a>
   <a href="#book">Book a Call</a>
 </nav>
 
@@ -775,7 +776,7 @@
   <p class="hero-sub">Credit union marketers have the data. It just lives in five different systems with no one connecting the dots. That changes now.</p>
   <div class="cta-group">
     <a href="#book" class="btn-primary">Book a 30-Min Call</a>
-    <a href="#newsletter" class="btn-secondary">Get the Intel Brief</a>
+    <a href="blog.html" class="btn-secondary">Get the Intel Brief</a>
   </div>
   <div class="scroll-hint">
     <span>Scroll</span>
@@ -806,11 +807,11 @@
     <div class="symptom">
       <div class="symptom-num">02</div>
       <div class="symptom-title">Exporting CSVs by hand</div>
-      <div class="symptom-text">Core. HubSpot. Call center. Website. Four exports. One spreadsheet. Hours of work. Still fuzzy.</div>
+      <div class="symptom-text">Core. HubSpot. Call center. Website. Four exports. One spreadsheet. Hours of work. Still unclear.</div>
     </div>
     <div class="symptom">
       <div class="symptom-num">03</div>
-      <div class="symptom-title">Fuzzy attribution</div>
+      <div class="symptom-title">unclear attribution</div>
       <div class="symptom-text">Leadership asks what the campaign returned. You know it worked. You just can't prove exactly how.</div>
     </div>
     <div class="symptom">
@@ -826,7 +827,7 @@
   <div class="what-changes-inner">
     <div>
       <div class="section-label fade-up">What Changes</div>
-      <h2 class="fade-up">From <em>fuzzy</em> to funded loan — completely connected.</h2>
+      <h2 class="fade-up">From <em>unclear</em> to funded loan — completely connected.</h2>
       <div class="before-after fade-up">
         <div class="ba-row">
           <span class="ba-before">Weeks waiting on IT</span>
@@ -839,7 +840,7 @@
           <span class="ba-after">Connected data layer</span>
         </div>
         <div class="ba-row">
-          <span class="ba-before">Fuzzy attribution</span>
+          <span class="ba-before">unclear attribution</span>
           <span class="ba-arrow">→</span>
           <span class="ba-after">Provable ROI</span>
         </div>
@@ -870,7 +871,7 @@
 <!-- PROOF -->
 <div class="proof">
   <div class="section-label fade-up" style="text-align:center;">Proof of Concept</div>
-  <div class="proof-number fade-up">$38<span>.7M</span></div>
+<div class="proof-number fade-up" style="color:var(--orange-mid);">$38<span>.7M</span></div>
   <div class="proof-label fade-up">in funded loan revenue · 6 months · one credit union</div>
   <p class="proof-text fade-up">Before Attrivix was a platform, our founder applied early attribution frameworks at a California credit union. This was the result. Now there's a platform behind it.</p>
 </div>
@@ -946,12 +947,29 @@
       <div class="cta-card-label">For the curious</div>
       <h3>The Attribution Intel Brief</h3>
       <p>What's moving in CU marketing tech, attribution, and AI — filtered for people who actually work in the space.</p>
-      <script src="https://js-na2.hsforms.net/forms/embed/246264806.js" defer></script>
-<div class="hs-form-frame" data-region="na2" data-form-id="eb3aa62a-910b-4cea-953e-4f7518c44fd5" data-portal-id="246264806"></div>
-    </div>
-
-  </div>
-</div>
+      <form id="hs-form" style="display:flex;flex-direction:column;gap:8px;">
+        <input type="text" id="hs-firstname" placeholder="First name" style="padding:11px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.25);border-radius:2px;color:#ffffff;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;" required>
+        <input type="text" id="hs-lastname" placeholder="Last name" style="padding:11px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.25);border-radius:2px;color:#ffffff;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;" required>
+        <input type="email" id="hs-email" placeholder="Work email" style="padding:11px 14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.25);border-radius:2px;color:#ffffff;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;" required>
+        <button type="submit" class="btn-white" id="hs-submit">Get the Intel Brief →</button>
+        <div id="hs-msg" style="font-size:0.78rem;text-align:center;min-height:18px;"></div>
+      </form>
+      <script>
+      document.getElementById('hs-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        var btn=document.getElementById('hs-submit');
+        var msg=document.getElementById('hs-msg');
+        btn.disabled=true;btn.textContent='Submitting...';
+        fetch('https://api.hsforms.com/submissions/v3/integration/submit/246264806/eb3aa62a-910b-4cea-953e-4f7518c44fd5',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({fields:[
+            {name:'firstname',value:document.getElementById('hs-firstname').value},
+            {name:'lastname',value:document.getElementById('hs-lastname').value},
+            {name:'email',value:document.getElementById('hs-email').value}
+          ]})
+        }).then(function(r){
+          if(r.ok){msg.style.color='#e8612a';ms
 
 <!-- FOOTER -->
 <footer>
