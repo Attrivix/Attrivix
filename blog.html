@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,727 +8,118 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-    *, * ::before, * ::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
+    *, * ::before, * ::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-        --orange: #E8612A;
-        --orange-light: #FDF1EB;
-        --orange-mid: #E8612A;
-        --navy: #0d1f35;
-        --navy-mid: #1a3050;
-        --text: #0d1f35;
-        --muted: #5a6878;
-        --border: rgba(13, 31, 53, 0.1);
-        --bg: #f8f8f6;
-        --white: #ffffff;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: 'DM Sans', sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        font-size: 16px;
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 48px;
-        background: rgba(248, 248, 246, 0.92);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.8rem;
-        color: var(--navy);
-        letter-spacing: 0.01em;
-        text-decoration: none;
-    }
-
-    .logo span {
-        color: var(--orange-mid);
-    }
-
-    .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    nav a.nav-cta {
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--navy);
-        text-decoration: none;
-        padding: 10px 22px;
-        border: 1px solid var(--navy);
-        border-radius: 2px;
-        transition: background 0.2s, color 0.2s;
-    }
-
-    nav a.nav-cta:hover {
-        background: var(--navy);
-        color: var(--white);
-    }
-
-    nav a.nav-ghost {
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--navy);
-        text-decoration: none;
-    }
-
-    .page-header {
-        padding: 160px 48px 80px;
-        max-width: 1100px;
-        margin: 0 auto;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .eyebrow {
-        font-size: 0.72rem;
-        font-weight: 500;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--orange-mid);
-        margin-bottom: 28px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .eyebrow::before, .eyebrow::after {
-        content: '';
-        display: block;
-        width: 32px;
-        height: 1px;
-        background: var(--orange-mid);
-    }
-
-    .page-header h1 {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 700;
-        font-size: clamp(2.4rem, 5vw, 4rem);
-        line-height: 1.1;
-        color: var(--navy);
-        max-width: 680px;
-        margin-bottom: 20px;
-        letter-spacing: -0.02em;
-    }
-
-    .page-header h1 em {
-        font-style: normal;
-        color: var(--orange-mid);
-    }
-
-    .page-header p {
-        font-size: 1.05rem;
-        color: var(--muted);
-        max-width: 520px;
-        font-weight: 300;
-        line-height: 1.7;
-    }
-
-    .blog-grid-wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 80px 48px;
-        display: grid;
-        grid-template-columns: 1fr 320px;
-        gap: 80px;
-        align-items: start;
-    }
-
-    .posts-list {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    .post-card {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        overflow: hidden;
-        margin-bottom: 2px;
-        transition: border-color 0.2s;
-    }
-
-    .post-card.featured {
-        border-left: 4px solid var(--orange-mid);
-    }
-
-    .post-card.open {
-        border-color: rgba(13, 31, 53, 0.2);
-    }
-
-    .post-card-header {
-        padding: 40px 40px 36px;
-        cursor: pointer;
-        user-select: none;
-    }
-
-    .post-card.compact .post-card-header {
-        padding: 28px 32px;
-    }
-
-    .post-card-header:hover .post-title {
-        color: var(--orange-mid);
-    }
-
-    .post-meta {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 16px;
-    }
-
-    .post-tag {
-        font-size: 0.68rem;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--orange-mid);
-        background: var(--orange-light);
-        padding: 4px 10px;
-        border-radius: 2px;
-    }
-
-    .post-date {
-        font-size: 0.75rem;
-        color: var(--muted);
-        letter-spacing: 0.06em;
-    }
-
-    .post-title {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 700;
-        font-size: 1.4rem;
-        color: var(--navy);
-        line-height: 1.25;
-        margin-bottom: 12px;
-        letter-spacing: -0.01em;
-        transition: color 0.2s;
-    }
-
-    .post-card.featured .post-title {
-        font-size: 1.7rem;
-    }
-
-    .post-card.compact .post-title {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-    }
-
-    .post-excerpt {
-        font-size: 0.88rem;
-        color: var(--muted);
-        line-height: 1.7;
-        font-weight: 300;
-        margin-bottom: 24px;
-    }
-
-    .post-card.compact .post-excerpt {
-        font-size: 0.83rem;
-        margin-bottom: 18px;
-    }
-
-    .post-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 20px;
-        border-top: 1px solid var(--border);
-    }
-
-    .post-author {
-        font-size: 0.75rem;
-        font-weight: 500;
-        color: var(--navy);
-        letter-spacing: 0.04em;
-    }
-
-    .post-read-time {
-        font-size: 0.72rem;
-        color: var(--muted);
-        letter-spacing: 0.08em;
-    }
-
-    .expand-toggle {
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--orange-mid);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .expand-toggle .toggle-icon {
-        display: inline-block;
-        transition: transform 0.3s ease;
-        font-style: normal;
-    }
-
-    .post-card.open .toggle-icon {
-        transform: rotate(180deg);
-    }
-
-    .post-body {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-    }
-
-    .post-card.open .post-body {
-        max-height: 4000px;
-    }
-
-    .post-body-inner {
-        padding: 0 40px 48px;
-        border-top: 1px solid var(--border);
-    }
-
-    .post-card.compact .post-body-inner {
-        padding: 0 32px 40px;
-    }
-
-    .post-body-inner p {
-        font-size: 0.95rem;
-        color: var(--text);
-        line-height: 1.85;
-        font-weight: 300;
-        margin-bottom: 20px;
-    }
-
-    .post-body-inner p:last-child {
-        margin-bottom: 0;
-    }
-
-    .post-body-inner h3 {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: var(--navy);
-        margin: 32px 0 12px;
-    }
-
-    .post-body-inner .pull-quote {
-        border-left: 3px solid var(--orange-mid);
-        padding: 16px 24px;
-        margin: 32px 0;
-        background: var(--orange-light);
-        border-radius: 0 4px 4px 0;
-    }
-
-    .post-body-inner .pull-quote p {
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--navy);
-        line-height: 1.6;
-        margin: 0;
-        font-style: italic;
-    }
-
-    .post-body-inner .data-row {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--border);
-        font-size: 0.88rem;
-    }
-
-    .post-body-inner .data-row:last-of-type {
-        border-bottom: none;
-    }
-
-    .post-body-inner .data-label {
-        color: var(--muted);
-        font-weight: 300;
-        flex: 1;
-    }
-
-    .post-body-inner .data-val {
-        font-weight: 700;
-        color: var(--navy);
-    }
-
-    .post-body-inner .data-good {
-        color: var(--orange-mid);
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-
-    .post-body-inner .data-bad {
-        color: #c0392b;
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-
-    .post-body-inner .cta-inline {
-        margin-top: 36px;
-        padding: 28px 32px;
-        background: var(--navy);
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
-
-    .post-body-inner .cta-inline p {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.88rem;
-        margin: 0;
-        flex: 1;
-    }
-
-    .post-body-inner .cta-inline a {
-        display: inline-block;
-        background: var(--orange-mid);
-        color: var(--white);
-        padding: 12px 24px;
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        text-decoration: none;
-        border-radius: 2px;
-        white-space: nowrap;
-        transition: opacity 0.2s;
-    }
-
-    .post-body-inner .cta-inline a:hover {
-        opacity: 0.88;
-    }
-
-    .section-divider {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 32px 0 20px;
-    }
-
-    .section-divider span {
-        font-size: 0.68rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--muted);
-        white-space: nowrap;
-    }
-
-    .section-divider::after {
-        content: '';
-        display: block;
-        height: 1px;
-        background: var(--border);
-        flex: 1;
-    }
-
-    .sidebar {
-        position: sticky;
-        top: 100px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .sidebar-block {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        padding: 32px;
-    }
-
-    .sidebar-label {
-        font-size: 0.68rem;
-        font-weight: 500;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--orange-mid);
-        margin-bottom: 16px;
-    }
-
-    .sidebar-block h3 {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.1rem;
-        color: var(--navy);
-        font-weight: 700;
-        line-height: 1.3;
-        margin-bottom: 10px;
-    }
-
-    .sidebar-block p {
-        font-size: 0.82rem;
-        color: var(--muted);
-        line-height: 1.65;
-        font-weight: 300;
-        margin-bottom: 20px;
-    }
-
-    .btn-primary {
-        display: block;
-        width: 100%;
-        background: var(--navy);
-        color: var(--white);
-        padding: 13px 24px;
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        text-decoration: none;
-        border: none;
-        border-radius: 2px;
-        cursor: pointer;
-        transition: background 0.2s;
-        font-family: 'DM Sans', sans-serif;
-        text-align: center;
-    }
-
-    .btn-primary:hover {
-        background: var(--navy-mid);
-    }
-
-    .topic-list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .topic-list li a {
-        display: flex;
-        align-items: center;
-        padding: 11px 0;
-        font-size: 0.85rem;
-        color: var(--text);
-        text-decoration: none;
-        border-bottom: 1px solid var(--border);
-        font-weight: 300;
-        transition: color 0.15s;
-        cursor: pointer;
-    }
-
-    .topic-list li:last-child a {
-        border-bottom: none;
-    }
-
-    .topic-list li a:hover, .topic-list li a.active {
-        color: var(--orange-mid);
-        font-weight: 500;
-    }
-
-    .nl-inline {
-        background: var(--navy);
-        border-radius: 4px;
-        padding: 32px;
-    }
-
-    .nl-inline .sidebar-label {
-        color: var(--orange-mid);
-    }
-
-    .nl-inline h3 {
-        color: var(--white);
-        margin-bottom: 10px;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 700;
-        line-height: 1.3;
-    }
-
-    .nl-inline p {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.82rem;
-        line-height: 1.65;
-        font-weight: 300;
-        margin-bottom: 16px;
-    }
-
-    .nl-inline input {
-        width: 100%;
-        padding: 11px 14px;
-        background: var(--white);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-radius: 2px;
-        color: var(--navy);
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.83rem;
-        outline: none;
-        transition: border-color 0.2s;
-        margin-bottom: 8px;
-    }
-
-    .nl-inline input::placeholder {
-        color: var(--muted);
-    }
-
-    .nl-inline input:focus {
-        border-color: var(--orange-mid);
-    }
-
-    .btn-orange {
-        display: block;
-        width: 100%;
-        background: var(--orange-mid);
-        color: var(--white);
-        padding: 13px 24px;
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.06em;
-        border: none;
-        border-radius: 2px;
-        cursor: pointer;
-        font-family: 'DM Sans', sans-serif;
-        text-align: center;
-        transition: opacity 0.2s;
-        margin-top: 4px;
-    }
-
-    .btn-orange:hover {
-        opacity: 0.88;
-    }
-
-    .nl-msg {
-        font-size: 0.78rem;
-        text-align: center;
-        min-height: 18px;
-        color: var(--orange-mid);
-        margin-top: 6px;
-    }
-
-    .pagination {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 48px 0 0;
-    }
-
-    .page-btn {
-        width: 36px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.82rem;
-        font-weight: 500;
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        color: var(--muted);
-        background: var(--white);
-    }
-
-    .page-btn.active {
-        background: var(--navy);
-        color: var(--white);
-        border-color: var(--navy);
-    }
-
-    footer {
-        padding: 40px 48px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 1px solid var(--border);
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 40px;
-    }
-
-    .footer-logo {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.1rem;
-        color: var(--navy);
-        text-decoration: none;
-    }
-
-    .footer-logo span {
-        color: var(--orange-mid);
-    }
-
-    .footer-text {
-        font-size: 0.75rem;
-        color: var(--muted);
-        letter-spacing: 0.06em;
-    }
-
-    footer a.footer-link {
-        font-size: 0.75rem;
-        color: var(--orange-mid);
-        text-decoration: none;
-    }
-
+        --orange: #E8612A; --orange-light: #FDF1EB; --orange-mid: #E8612A;
+        --navy: #0d1f35; --navy-mid: #1a3050; --text: #0d1f35;
+        --muted: #5a6878; --border: rgba(13, 31, 53, 0.1);
+        --bg: #f8f8f6; --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(248, 248, 246, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .logo { font-family: 'DM Sans', sans-serif; font-size: 1.8rem; color: var(--navy); letter-spacing: 0.01em; text-decoration: none; font-weight: 700; }
+    .logo span { color: var(--orange-mid); }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    nav a.nav-cta { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding: 10px 22px; border: 1px solid var(--navy); border-radius: 2px; transition: background 0.2s, color 0.2s; }
+    nav a.nav-cta:hover { background: var(--navy); color: var(--white); }
+    nav a.nav-ghost { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+    .page-header { padding: 160px 48px 80px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-mid); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+    .eyebrow::before, .eyebrow::after { content: ''; display: block; width: 32px; height: 1px; background: var(--orange-mid); }
+    .page-header h1 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.1; color: var(--navy); max-width: 680px; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .page-header h1 em { font-style: normal; color: var(--orange-mid); }
+    .page-header p { font-size: 1.05rem; color: var(--muted); max-width: 520px; font-weight: 300; line-height: 1.7; }
+    .blog-grid-wrapper { max-width: 1100px; margin: 0 auto; padding: 80px 48px; display: grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: start; }
+    .posts-list { display: flex; flex-direction: column; gap: 2px; }
+    .post-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 2px; transition: border-color 0.2s; }
+    .post-card.featured { border-left: 4px solid var(--orange-mid); }
+    .post-card.open { border-color: rgba(13, 31, 53, 0.2); }
+    .post-card-header { padding: 40px 40px 36px; cursor: pointer; user-select: none; }
+    .post-card.compact .post-card-header { padding: 28px 32px; }
+    .post-card-header:hover .post-title { color: var(--orange-mid); }
+    .post-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .post-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-mid); background: var(--orange-light); padding: 4px 10px; border-radius: 2px; }
+    .post-date { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
+    .post-title { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--navy); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.01em; transition: color 0.2s; }
+    .post-card.featured .post-title { font-size: 1.7rem; }
+    .post-card.compact .post-title { font-size: 1.1rem; margin-bottom: 8px; }
+    .post-excerpt { font-size: 0.88rem; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 24px; }
+    .post-card.compact .post-excerpt { font-size: 0.83rem; margin-bottom: 18px; }
+    .post-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border); }
+    .post-author { font-size: 0.75rem; font-weight: 500; color: var(--navy); letter-spacing: 0.04em; }
+    .post-read-time { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
+    .expand-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-mid); display: flex; align-items: center; gap: 6px; }
+    .expand-toggle .toggle-icon { display: inline-block; transition: transform 0.3s ease; font-style: normal; }
+    .post-card.open .toggle-icon { transform: rotate(180deg); }
+    .post-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .post-card.open .post-body { max-height: 4000px; }
+    .post-body-inner { padding: 0 40px 48px; border-top: 1px solid var(--border); }
+    .post-card.compact .post-body-inner { padding: 0 32px 40px; }
+    .post-body-inner p { font-size: 0.95rem; color: var(--text); line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+    .post-body-inner p:last-child { margin-bottom: 0; }
+    .post-body-inner h3 { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 32px 0 12px; }
+    .post-body-inner .pull-quote { border-left: 3px solid var(--orange-mid); padding: 16px 24px; margin: 32px 0; background: var(--orange-light); border-radius: 0 4px 4px 0; }
+    .post-body-inner .pull-quote p { font-size: 1rem; font-weight: 500; color: var(--navy); line-height: 1.6; margin: 0; font-style: italic; }
+    .post-body-inner .data-row { display: flex; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .post-body-inner .data-row:last-of-type { border-bottom: none; }
+    .post-body-inner .data-label { color: var(--muted); font-weight: 300; flex: 1; }
+    .post-body-inner .data-val { font-weight: 700; color: var(--navy); }
+    .post-body-inner .data-good { color: var(--orange-mid); font-size: 0.75rem; font-weight: 500; }
+    .post-body-inner .data-bad { color: #c0392b; font-size: 0.75rem; font-weight: 500; }
+    .post-body-inner .cta-inline { margin-top: 36px; padding: 28px 32px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .post-body-inner .cta-inline p { color: rgba(255, 255, 255, 0.7); font-size: 0.88rem; margin: 0; flex: 1; }
+    .post-body-inner .cta-inline a { display: inline-block; background: var(--orange-mid); color: var(--white); padding: 12px 24px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: opacity 0.2s; }
+    .post-body-inner .cta-inline a:hover { opacity: 0.88; }
+    .section-divider { display: flex; align-items: center; gap: 16px; padding: 32px 0 20px; }
+    .section-divider span { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .section-divider::after { content: ''; display: block; height: 1px; background: var(--border); flex: 1; }
+    .sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-block { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 32px; }
+    .sidebar-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-mid); margin-bottom: 16px; }
+    .sidebar-block h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; color: var(--navy); font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+    .sidebar-block p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; font-weight: 300; margin-bottom: 20px; }
+    .btn-primary { display: block; width: 100%; background: var(--navy); color: var(--white); padding: 13px 24px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; font-family: 'DM Sans', sans-serif; text-align: center; }
+    .btn-primary:hover { background: var(--navy-mid); }
+    .topic-list { list-style: none; display: flex; flex-direction: column; }
+    .topic-list li a { display: flex; align-items: center; padding: 11px 0; font-size: 0.85rem; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); font-weight: 300; transition: color 0.15s; cursor: pointer; }
+    .topic-list li:last-child a { border-bottom: none; }
+    .topic-list li a:hover, .topic-list li a.active { color: var(--orange-mid); font-weight: 500; }
+    .nl-inline { background: var(--navy); border-radius: 4px; padding: 32px; }
+    .nl-inline .sidebar-label { color: var(--orange-mid); }
+    .nl-inline h3 { color: var(--white); margin-bottom: 10px; font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+    .nl-inline p { color: rgba(255, 255, 255, 0.7); font-size: 0.82rem; line-height: 1.65; font-weight: 300; margin-bottom: 16px; }
+    .nl-inline input { width: 100%; padding: 11px 14px; background: var(--white); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 2px; color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s; margin-bottom: 8px; }
+    .nl-inline input::placeholder { color: var(--muted); }
+    .nl-inline input:focus { border-color: var(--orange-mid); }
+    .btn-orange { display: block; width: 100%; background: var(--orange-mid); color: var(--white); padding: 13px 24px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; border: none; border-radius: 2px; cursor: pointer; font-family: 'DM Sans', sans-serif; text-align: center; transition: opacity 0.2s; margin-top: 4px; }
+    .btn-orange:hover { opacity: 0.88; }
+    .nl-msg { font-size: 0.78rem; text-align: center; min-height: 18px; color: var(--orange-mid); margin-top: 6px; }
+    .pagination { display: flex; align-items: center; gap: 8px; padding: 48px 0 0; }
+    .page-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 500; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); background: var(--white); }
+    .page-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    footer { padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 16px; margin-top: 40px; }
+    .footer-logo { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; color: var(--navy); text-decoration: none; font-weight: 700; }
+    .footer-logo span { color: var(--orange-mid); }
+    .footer-text { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
+    footer a.footer-link { font-size: 0.75rem; color: var(--orange-mid); text-decoration: none; }
     @media (max-width: 900px) {
-        nav {
-            padding: 16px 24px;
-        }
-
-        .page-header {
-            padding: 120px 24px 60px;
-        }
-
-        .blog-grid-wrapper {
-            grid-template-columns: 1fr;
-            gap: 48px;
-            padding: 60px 24px;
-        }
-
-        .sidebar {
-            position: static;
-        }
-
-        footer {
-            padding: 32px 24px;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .post-card-header {
-            padding: 28px 24px 24px;
-        }
-
-        .post-body-inner {
-            padding: 0 24px 36px;
-        }
-
-        .post-card.featured .post-title {
-            font-size: 1.4rem;
-        }
-
-        .post-body-inner .cta-inline {
-            flex-direction: column;
-        }
+        nav { padding: 16px 24px; }
+        .page-header { padding: 120px 24px 60px; }
+        .blog-grid-wrapper { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+        .sidebar { position: static; }
+        footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+        .post-card-header { padding: 28px 24px 24px; }
+        .post-body-inner { padding: 0 24px 36px; }
+        .post-card.featured .post-title { font-size: 1.4rem; }
+        .post-body-inner .cta-inline { flex-direction: column; }
     }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">
-            Attri<span>vix</span>
-        </a>
+        <a href="index.html" class="logo">Attri<span>vix</span></a>
         <div class="nav-links">
             <a href="index.html" class="nav-ghost">Home</a>
             <a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&ep=pcard" class="nav-cta">Book a Call</a>
@@ -736,13 +128,7 @@
 
     <div class="page-header">
         <div class="eyebrow">Intel Brief</div>
-        <h1>
-            What we're watching.
-            <br>
-            What it means for 
-            <em>your</em>
-             CU.
-        </h1>
+        <h1>What we're watching.<br>What it means for <em>your</em> CU.</h1>
         <p>CU marketing attribution, AI developments, and the data intelligence landscape -- filtered for people who actually work in the space. No fluff. No vendor pitches.</p>
     </div>
 
@@ -750,6 +136,7 @@
         <main>
             <div class="posts-list" id="posts-list">
 
+                <!-- FEATURED POST -->
                 <div class="post-card featured" data-category="attribution">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
@@ -761,52 +148,23 @@
                         <div class="post-footer">
                             <span class="post-author">Patricia Thomas</span>
                             <span class="post-read-time">6 min read</span>
-                            <span class="expand-toggle">
-                                Read full post 
-                                <i class="toggle-icon">&#8964;</i>
-                            </span>
+                            <span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
                         </div>
                     </div>
                     <div class="post-body">
                         <div class="post-body-inner">
                             <p>Every quarter, the same conversation happens in credit union marketing departments across the country. Leadership asks what the marketing budget returned. The marketing director pulls together whatever data they can -- usually a combination of Google Analytics, a HubSpot export, and a pivot table someone built six months ago -- and delivers an answer that starts with "based on what we can see."</p>
                             <p>That qualifier. "Based on what we can see." It is doing a lot of work. What it really means is: we do not actually know.</p>
-                            <div class="pull-quote">
-                                <p>"The tools to fix this have existed for years. Nobody built them for the way credit unions actually work -- until now."</p>
-                            </div>
+                            <div class="pull-quote"><p>"The tools to fix this have existed for years. Nobody built them for the way credit unions actually work -- until now."</p></div>
                             <p>Here is what a typical mid-size credit union spends on marketing annually: somewhere between $250,000 and $400,000. Call it $300,000 for this exercise. That money gets allocated across email campaigns, digital ads, direct mail, branch events, call center outbound, and social media. The allocation is usually based on a combination of what worked last year, what the vendors are pushing, and gut feel.</p>
                             <h3>What the data actually shows</h3>
                             <p>When Attrivix connects all the systems and runs attribution for the first time, the numbers almost never look like what the marketing team expected. Here is a representative example of what 90 days of attribution data looks like for a CU spending $300,000 annually:</p>
-                            <div class="data-row">
-                                <span class="data-label">Email campaigns -- $80,000 spent</span>
-                                <span class="data-val">275 funded loans</span>
-                                <span class="data-good">$291/loan &#10003;</span>
-                            </div>
-                            <div class="data-row">
-                                <span class="data-label">Branch events -- $40,000 spent</span>
-                                <span class="data-val">89 funded loans</span>
-                                <span class="data-good">$449/loan &#10003;</span>
-                            </div>
-                            <div class="data-row">
-                                <span class="data-label">Call center outbound -- $40,000 spent</span>
-                                <span class="data-val">134 funded loans</span>
-                                <span class="data-good">$299/loan &#10003;</span>
-                            </div>
-                            <div class="data-row">
-                                <span class="data-label">Digital ads -- $60,000 spent</span>
-                                <span class="data-val">12 funded loans</span>
-                                <span class="data-bad">$5,000/loan &#10007;</span>
-                            </div>
-                            <div class="data-row">
-                                <span class="data-label">Direct mail -- $50,000 spent</span>
-                                <span class="data-val">8 funded loans</span>
-                                <span class="data-bad">$6,250/loan &#10007;</span>
-                            </div>
-                            <div class="data-row">
-                                <span class="data-label">Social media -- $30,000 spent</span>
-                                <span class="data-val">3 funded loans</span>
-                                <span class="data-bad">$10,000/loan &#10007;</span>
-                            </div>
+                            <div class="data-row"><span class="data-label">Email campaigns -- $80,000 spent</span><span class="data-val">275 funded loans</span><span class="data-good">$291/loan &#10003;</span></div>
+                            <div class="data-row"><span class="data-label">Branch events -- $40,000 spent</span><span class="data-val">89 funded loans</span><span class="data-good">$449/loan &#10003;</span></div>
+                            <div class="data-row"><span class="data-label">Call center outbound -- $40,000 spent</span><span class="data-val">134 funded loans</span><span class="data-good">$299/loan &#10003;</span></div>
+                            <div class="data-row"><span class="data-label">Digital ads -- $60,000 spent</span><span class="data-val">12 funded loans</span><span class="data-bad">$5,000/loan &#10007;</span></div>
+                            <div class="data-row"><span class="data-label">Direct mail -- $50,000 spent</span><span class="data-val">8 funded loans</span><span class="data-bad">$6,250/loan &#10007;</span></div>
+                            <div class="data-row"><span class="data-label">Social media -- $30,000 spent</span><span class="data-val">3 funded loans</span><span class="data-bad">$10,000/loan &#10007;</span></div>
                             <h3>The reallocation math</h3>
                             <p>Stop spending on what does not work. Redirect that $140,000 into what does. Same budget. Dramatically more loans. That is not a marketing insight. That is a lending strategy.</p>
                             <p>The question is not whether your CU can afford attribution intelligence. It is whether you can afford another year without it.</p>
@@ -818,10 +176,41 @@
                     </div>
                 </div>
 
-                <div class="section-divider">
-                    <span>Recent Posts</span>
+                <div class="section-divider"><span>Recent Posts</span></div>
+
+                <!-- NEW POST - June 11 -->
+                <div class="post-card compact" data-category="data-security">
+                    <div class="post-card-header" onclick="togglePost(this)">
+                        <div class="post-meta">
+                            <span class="post-tag">Data Security</span>
+                            <span class="post-date">June 11, 2026</span>
+                        </div>
+                        <div class="post-title">Why I Built Attrivix the Way I Did</div>
+                        <p class="post-excerpt">Every conference. Every other post. Data security and AI. It is not a trend. It is a reckoning. Here is why I rethought whether the data needed to move at all.</p>
+                        <div class="post-footer">
+                            <span class="post-author">Patricia Thomas</span>
+                            <span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <div class="post-body-inner">
+                            <p>Every conference. Every other post. Data security and AI. It is not a trend. It is a reckoning.</p>
+                            <p>When I started mapping out what Attrivix needed to be, I kept running into the same wall. The obvious model -- a SaaS platform that pulls in credit union data, processes it, and sends intelligence back out -- works. Plenty of companies are built that way. SOC 2 certifications, encryption, best practices. The risk is mitigated.</p>
+                            <p>But mitigated is not eliminated.</p>
+                            <div class="pull-quote"><p>"I kept asking myself one question: why take that risk at all if you do not have to?"</p></div>
+                            <p>Here is what moves in a typical marketing data sync: first name, last name, date of birth, address, phone number, email. No Social Security numbers. No account numbers. But enough. Enough to do real damage if something goes wrong.</p>
+                            <p>And in financial services, things go wrong. Platforms get breached. Vendors get compromised. The bigger the name, the bigger the target.</p>
+                            <p>That question is why I built Attrivix the way I did. The answer was not about finding a safer SaaS model. It was about rethinking whether the data needed to move at all.</p>
+                            <p>That is not a feature. That is a philosophy.</p>
+                            <div class="cta-inline">
+                                <p>Want to understand how Attrivix keeps your member data inside your environment? Let us show you.</p>
+                                <a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&ep=pcard">Book 30 minutes &#8594;</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- May 27 -->
                 <div class="post-card compact" data-category="attribution">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
@@ -832,19 +221,14 @@
                         <p class="post-excerpt">Your marketing team can correlate campaigns to funded loans. Your leadership wants to know which campaigns caused them. This is not a semantic distinction -- it is the difference between guessing and knowing.</p>
                         <div class="post-footer">
                             <span class="post-author">Patricia Thomas</span>
-                            <span class="expand-toggle">
-                                Read full post 
-                                <i class="toggle-icon">&#8964;</i>
-                            </span>
+                            <span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
                         </div>
                     </div>
                     <div class="post-body">
                         <div class="post-body-inner">
                             <p>Correlation is easy. You run an email campaign in March. Funded loans go up in April. You write in your board report that the email campaign drove loan growth. Everyone nods. Nobody pushes back. The number is real. The cause-and-effect claim is not.</p>
                             <p>Maybe loan volume goes up every April because tax refunds drive home improvement projects. Maybe the branch team ran a rate promotion at the same time. Maybe two hundred members who got the email would have applied anyway because their lease was expiring. You do not know. You correlated. You did not prove causation.</p>
-                            <div class="pull-quote">
-                                <p>"Your leadership does not care about correlation. They care about where to aim the budget next quarter. Correlation does not answer that question."</p>
-                            </div>
+                            <div class="pull-quote"><p>"Your leadership does not care about correlation. They care about where to aim the budget next quarter. Correlation does not answer that question."</p></div>
                             <h3>What causation actually requires</h3>
                             <p>To move from correlation to causation, you need three things: identity resolution (the same person who received the campaign touch is the same person who funded the loan), journey mapping (you can see every touch between the campaign and the funded loan, not just the first and last), and counterfactual logic (you have a basis for knowing this loan would not have happened without that campaign touch).</p>
                             <p>None of those three things are possible when your campaign data lives in HubSpot, your funded loan data lives in your LOS, your member identity lives in your core, and none of them talk to each other.</p>
@@ -859,6 +243,7 @@
                     </div>
                 </div>
 
+                <!-- May 6 -->
                 <div class="post-card compact" data-category="attribution">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
@@ -869,19 +254,14 @@
                         <p class="post-excerpt">Before you can connect a campaign to a funded loan, you have to connect the person who saw the campaign to the member who funded the loan. At a credit union with 80,000 members across five systems, that is harder than it sounds.</p>
                         <div class="post-footer">
                             <span class="post-author">Patricia Thomas</span>
-                            <span class="expand-toggle">
-                                Read full post 
-                                <i class="toggle-icon">&#8964;</i>
-                            </span>
+                            <span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
                         </div>
                     </div>
                     <div class="post-body">
                         <div class="post-body-inner">
                             <p>Attribution fails at the identity layer more often than at any other point in the process. Not because the technology for identity resolution does not exist -- it does, and it is quite good -- but because the data that feeds it is messier than most marketing teams expect when they start the project.</p>
                             <p>Consider what actually happens when a member touches your CU across multiple systems. They open a marketing email via HubSpot under the address they used when they joined fifteen years ago. They click through to your website and fill out a loan inquiry form using a different email -- their work address. They call your call center to ask a question, and the call center rep looks them up by member ID. They eventually apply through the LOS portal. They fund the loan. Your core records the transaction.</p>
-                            <div class="pull-quote">
-                                <p>"Five systems. One member. Potentially five different identifiers. No shared key. That is the identity resolution problem at a credit union."</p>
-                            </div>
+                            <div class="pull-quote"><p>"Five systems. One member. Potentially five different identifiers. No shared key. That is the identity resolution problem at a credit union."</p></div>
                             <h3>What we assess before anything is built</h3>
                             <p>When Attrivix engages with a credit union, identity resolution complexity is one of the first things assessed. How fragmented are your member records across systems? What shared identifiers exist between your core, LOS, and CRM? The answers shape the attribution model and set realistic expectations about coverage from day one versus six months in, as the identity graph matures over time.</p>
                             <p>A credit union with clean, consistent member data gets to full attribution coverage faster than one with years of fragmented records. The identity layer is where most attribution efforts break down. It is also where Attrivix starts.</p>
@@ -893,6 +273,7 @@
                     </div>
                 </div>
 
+                <!-- April 29 -->
                 <div class="post-card compact" data-category="operations">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
@@ -903,19 +284,14 @@
                         <p class="post-excerpt">Your team is spending significant time every month producing an attribution answer that leadership receives with polite skepticism. Here is what that actually costs -- and what changes when the answer is provable.</p>
                         <div class="post-footer">
                             <span class="post-author">Patricia Thomas</span>
-                            <span class="expand-toggle">
-                                Read full post 
-                                <i class="toggle-icon">&#8964;</i>
-                            </span>
+                            <span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
                         </div>
                     </div>
                     <div class="post-body">
                         <div class="post-body-inner">
                             <p>Every month, somewhere in a credit union marketing department, someone opens a spreadsheet they did not want to open. They know what the next several hours look like. Exports from the LOS. A data request to IT. Call center numbers pulled separately. All of it landing in Excel, where they will spend the better part of a week trying to stitch together an answer that leadership will receive with polite skepticism.</p>
                             <p>The answer they produce is not wrong, exactly. It is just not defensible. It is the best possible output from a process that was never designed to answer the question being asked.</p>
-                            <div class="pull-quote">
-                                <p>"You are not paying for bad attribution. You are paying for an unverifiable answer -- and paying again every month to produce it."</p>
-                            </div>
+                            <div class="pull-quote"><p>"You are not paying for bad attribution. You are paying for an unverifiable answer -- and paying again every month to produce it."</p></div>
                             <h3>The real cost is not the hours</h3>
                             <p>The labor cost is real -- thirty hours a month at fully loaded rates is money leaving the building for a report nobody fully trusts. But the larger cost is strategic. When attribution is unverifiable, budget decisions default to inertia. Last year's allocation becomes this year's allocation. Channels that do not work keep getting funded because nobody can prove they do not work.</p>
                             <p>That is not a reporting problem. That is a lending performance problem.</p>
@@ -943,18 +319,11 @@
             <div class="sidebar-block">
                 <div class="sidebar-label">Topics</div>
                 <ul class="topic-list" id="topic-list">
-                    <li>
-                        <a onclick="filterPosts('all',this)" class="active">All Posts</a>
-                    </li>
-                    <li>
-                        <a onclick="filterPosts('attribution',this)">Attribution</a>
-                    </li>
-                    <li>
-                        <a onclick="filterPosts('operations',this)">Operations</a>
-                    </li>
-                    <li>
-                        <a onclick="filterPosts('industry',this)">Industry</a>
-                    </li>
+                    <li><a onclick="filterPosts('all',this)" class="active">All Posts</a></li>
+                    <li><a onclick="filterPosts('attribution',this)">Attribution</a></li>
+                    <li><a onclick="filterPosts('operations',this)">Operations</a></li>
+                    <li><a onclick="filterPosts('data-security',this)">Data Security</a></li>
+                    <li><a onclick="filterPosts('industry',this)">Industry</a></li>
                 </ul>
             </div>
             <div class="nl-inline">
@@ -979,10 +348,7 @@
     </div>
 
     <footer>
-        <a href="index.html" class="footer-logo">
-            Attri
-            <span>vix</span>
-        </a>
+        <a href="index.html" class="footer-logo">Attri<span>vix</span></a>
         <div class="footer-text">Attribution Intelligence for Credit Unions &middot; attrivix.com</div>
         <a href="mailto:patricia@attrivix.com" class="footer-link">patricia@attrivix.com</a>
     </footer>
@@ -991,11 +357,8 @@
     function togglePost(header) {
         header.closest('.post-card').classList.toggle('open');
     }
-
     function filterPosts(category, el) {
-        document.querySelectorAll('#topic-list a').forEach(function(a) {
-            a.classList.remove('active');
-        });
+        document.querySelectorAll('#topic-list a').forEach(function(a) { a.classList.remove('active'); });
         el.classList.add('active');
         var cards = document.querySelectorAll('.post-card');
         var divider = document.querySelector('.section-divider');
@@ -1003,14 +366,10 @@
         cards.forEach(function(card) {
             var match = category === 'all' || card.dataset.category === category;
             card.style.display = match ? 'block' : 'none';
-            if (match)
-                count++;
+            if (match) count++;
         });
-        if (divider)
-            divider.style.display = category === 'all' ? '' : 'none';
-        document.getElementById('no-posts') && (document.getElementById('no-posts').style.display = count === 0 ? 'block' : 'none');
+        if (divider) divider.style.display = category === 'all' ? '' : 'none';
     }
-
     document.getElementById('blog-hs-form').addEventListener('submit', function(e) {
         e.preventDefault();
         var btn = document.getElementById('blog-submit');
@@ -1019,38 +378,17 @@
         btn.textContent = 'Submitting...';
         fetch('https://api.hsforms.com/submissions/v3/integration/submit/246264806/eb3aa62a-910b-4cea-953e-4f7518c44fd5', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                fields: [
-                {
-                    name: 'firstname',
-                    value: document.getElementById('blog-firstname').value
-                },
-                {
-                    name: 'lastname',
-                    value: document.getElementById('blog-lastname').value
-                },
-                {
-                    name: 'email',
-                    value: document.getElementById('blog-email').value
-                }
-                ]
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fields: [
+                { name: 'firstname', value: document.getElementById('blog-firstname').value },
+                { name: 'lastname', value: document.getElementById('blog-lastname').value },
+                { name: 'email', value: document.getElementById('blog-email').value }
+            ]})
         }).then(function(r) {
-            if (r.ok) {
-                msg.textContent = "You're on the list.";
-                btn.textContent = 'Done';
-            } else {
-                msg.textContent = 'Something went wrong -- email patricia@attrivix.com';
-                btn.disabled = false;
-                btn.textContent = 'Try again';
-            }
+            if (r.ok) { msg.textContent = "You're on the list."; btn.textContent = 'Done'; }
+            else { msg.textContent = 'Something went wrong -- email patricia@attrivix.com'; btn.disabled = false; btn.textContent = 'Try again'; }
         }).catch(function() {
-            msg.textContent = 'Something went wrong -- email patricia@attrivix.com';
-            btn.disabled = false;
-            btn.textContent = 'Try again';
+            msg.textContent = 'Something went wrong -- email patricia@attrivix.com'; btn.disabled = false; btn.textContent = 'Try again';
         });
     });
     </script>
