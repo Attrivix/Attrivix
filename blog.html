@@ -53,7 +53,7 @@
     .expand-toggle .toggle-icon { display: inline-block; transition: transform 0.3s ease; font-style: normal; }
     .post-card.open .toggle-icon { transform: rotate(180deg); }
     .post-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-    .post-card.open .post-body { max-height: 4000px; }
+    .post-card.open .post-body { max-height: 5000px; }
     .post-body-inner { padding: 0 40px 48px; border-top: 1px solid var(--border); }
     .post-card.compact .post-body-inner { padding: 0 32px 40px; }
     .post-body-inner p { font-size: 0.95rem; color: var(--text); line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
@@ -136,15 +136,15 @@
         <main>
             <div class="posts-list" id="posts-list">
 
-                <!-- FEATURED POST -->
-                <div class="post-card featured" data-category="attribution">
+                <!-- FEATURED POST — July 13, 2026 -->
+                <div id="attribution-mandatory" class="post-card featured" data-category="attribution" style="scroll-margin-top: 220px;">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
                             <span class="post-tag">Attribution</span>
-                            <span class="post-date">June 3, 2026</span>
+                            <span class="post-date">July 13, 2026</span>
                         </div>
-                        <div class="post-title">The $140,000 Question: Which Half of Your Marketing Budget Is Working?</div>
-                        <p class="post-excerpt">Most credit union marketing teams know the answer is in there somewhere -- spread across exports from the core, HubSpot, the call center, and the LOS. The problem is not the data. It is that nobody connected the dots between first touch and funded loan.</p>
+                        <div class="post-title">Attribution Is Not Optional. It Never Was.</div>
+                        <p class="post-excerpt">For too long, credit unions have been guessing at what drives funded loan outcomes. Attribution isn't a marketing metric. It drives budgets. Budgets drive revenue. Revenue drives the health of the institution.</p>
                         <div class="post-footer">
                             <span class="post-author">Patricia Thomas</span>
                             <span class="post-read-time">6 min read</span>
@@ -153,23 +153,31 @@
                     </div>
                     <div class="post-body">
                         <div class="post-body-inner">
-                            <p>Every quarter, the same conversation happens in credit union marketing departments across the country. Leadership asks what the marketing budget returned. The marketing director pulls together whatever data they can -- usually a combination of Google Analytics, a HubSpot export, and a pivot table someone built six months ago -- and delivers an answer that starts with "based on what we can see."</p>
-                            <p>That qualifier. "Based on what we can see." It is doing a lot of work. What it really means is: we do not actually know.</p>
-                            <div class="pull-quote"><p>"The tools to fix this have existed for years. Nobody built them for the way credit unions actually work -- until now."</p></div>
-                            <p>Here is what a typical mid-size credit union spends on marketing annually: somewhere between $250,000 and $400,000. Call it $300,000 for this exercise. That money gets allocated across email campaigns, digital ads, direct mail, branch events, call center outbound, and social media. The allocation is usually based on a combination of what worked last year, what the vendors are pushing, and gut feel.</p>
-                            <h3>What the data actually shows</h3>
-                            <p>When Attrivix connects all the systems and runs attribution for the first time, the numbers almost never look like what the marketing team expected. Here is a representative example of what 90 days of attribution data looks like for a CU spending $300,000 annually:</p>
-                            <div class="data-row"><span class="data-label">Email campaigns -- $80,000 spent</span><span class="data-val">275 funded loans</span><span class="data-good">$291/loan &#10003;</span></div>
-                            <div class="data-row"><span class="data-label">Branch events -- $40,000 spent</span><span class="data-val">89 funded loans</span><span class="data-good">$449/loan &#10003;</span></div>
-                            <div class="data-row"><span class="data-label">Call center outbound -- $40,000 spent</span><span class="data-val">134 funded loans</span><span class="data-good">$299/loan &#10003;</span></div>
-                            <div class="data-row"><span class="data-label">Digital ads -- $60,000 spent</span><span class="data-val">12 funded loans</span><span class="data-bad">$5,000/loan &#10007;</span></div>
-                            <div class="data-row"><span class="data-label">Direct mail -- $50,000 spent</span><span class="data-val">8 funded loans</span><span class="data-bad">$6,250/loan &#10007;</span></div>
-                            <div class="data-row"><span class="data-label">Social media -- $30,000 spent</span><span class="data-val">3 funded loans</span><span class="data-bad">$10,000/loan &#10007;</span></div>
-                            <h3>The reallocation math</h3>
-                            <p>Stop spending on what does not work. Redirect that $140,000 into what does. Same budget. Dramatically more loans. That is not a marketing insight. That is a lending strategy.</p>
-                            <p>The question is not whether your CU can afford attribution intelligence. It is whether you can afford another year without it.</p>
+                            <p>For too long, credit unions have been guessing at what is driving funded loan outcomes.</p>
+                            <p>Maybe someone built a custom workaround. Maybe there is a tracking code on the email campaign that captures some of it. But when the husband gets the email and the wife walks into the branch and funds the loan -- that code never saw it. The attribution stops where the member's journey does not.</p>
+                            <p>And that gap is costing more than most institutions realize.</p>
+                            <h3>What optional attribution actually costs</h3>
+                            <p>When attribution is treated as a nice-to-have, the consequences show up in places that feel unrelated. Budgets go to the wrong channels because the right ones are not getting credit. Front line staff do not get the coaching they need because nobody can identify where the lead broke down. Referral spiffs get paid out on incomplete data. And somewhere in a branch, a lead card is being hand-written and walked across the floor because there is no system connecting what happens there to what happens everywhere else.</p>
+                            <p>These are not small inefficiencies. They compound. Every quarter that passes without attribution is another quarter of decisions made on assumption instead of evidence.</p>
+                            <p>Attribution drives budgets. Budgets drive revenue. Revenue drives the health of the institution. That chain is not optional.</p>
+                            <div class="pull-quote"><p>Attribution = Accountability.</p></div>
+                            <h3>The guess that became the standard</h3>
+                            <p>I spent seven years managing enterprise accounts across 120 credit unions. The attribution conversation came up constantly -- in board rooms, in marketing reviews, in one-on-one conversations after the agenda was done. And the same pattern repeated at institution after institution.</p>
+                            <p>The marketing team knew their campaigns were working. They could feel it. But when leadership asked what the marketing budget actually returned, the honest answer -- the one nobody said out loud -- was that they did not know. Not precisely. Not provably.</p>
+                            <p>So they correlated. They pointed at loan volume trends. They built pivot tables that told a plausible story. They delivered answers that started with "based on what we can see." And leadership nodded, because there was nothing better to point to.</p>
+                            <p>That guess became the standard. And the standard became the budget process.</p>
+                            <h3>What the gap is actually hiding</h3>
+                            <p>The problem is not that credit unions do not have data. They have more data than they have ever had. The problem is that it sits in pieces -- in the core, in the LOS, in the call center platform, in the email system -- and nobody connected those pieces to each other.</p>
+                            <p>When they are not connected, the real picture is invisible. A campaign that looks like it drove twenty loans actually drove forty-eight. A vendor that looks like it is performing is quietly leaking budget. A front line team member who looks like they are converting leads is actually losing them somewhere between the conversation and the follow-up -- and nobody knows where because the journey was never tracked.</p>
+                            <p>You cannot fix what you cannot see. And right now, most credit unions cannot see nearly enough.</p>
+                            <h3>What mandatory attribution actually delivers</h3>
+                            <p>I am not saying attribution gives you all the answers. I am saying it answers a lot of your burning questions. What dollars funded which loans. What the member journey actually looked like from first touch to close. Which vendors are working and which are not, and why.</p>
+                            <p>CU leaders do not need more dashboards. They need actual numbers to make stronger decisions. That is what attribution done right delivers -- not a report, but a foundation for every budget conversation, every staffing decision, every vendor renewal that follows.</p>
+                            <p>The technology to do this right now exists. It is built inside your existing Microsoft environment. It reads what is already there. It does not require a new vendor procurement, an IT overhaul, or months of implementation risk.</p>
+                            <p>What it requires is deciding that the full picture matters enough to go get it.</p>
+                            <p>Attribution is not optional. It never was. The industry just did not have a way to make it mandatory -- until now.</p>
                             <div class="cta-inline">
-                                <p>The only numbers that matter are yours. Let's find them.</p>
+                                <p>Ready to see the full picture -- from first touch to funded loan?</p>
                                 <a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&ep=pcard">Book 30 minutes &#8594;</a>
                             </div>
                         </div>
@@ -178,7 +186,7 @@
 
                 <div class="section-divider"><span>Recent Posts</span></div>
 
-                <!-- NEW POST - July 7, 2026 -->
+                <!-- July 7, 2026 -->
                 <div id="org-chart" class="post-card compact" data-category="industry" style="scroll-margin-top: 220px;">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
@@ -202,7 +210,7 @@
                             <p>When I was managing enterprise accounts at Origence, I watched this dynamic play out at credit unions of every size. The marketing team would build a campaign. The results would land in a report that said something like "email engagement was strong this quarter." Lending would have their own numbers. The gap between what marketing reported and what lending saw in funded loan volume was real, but it was invisible -- because nobody was in a room where both sets of numbers were on the table at the same time.</p>
                             <p>The governance problem is not about bad intentions. Every department head I worked with was doing exactly what they were supposed to do. Marketing was protecting its budget. IT was protecting the integrity of the systems. Lending was protecting its pipeline. The problem is that doing your job well inside your own department can still produce a collective failure at the institution level.</p>
                             <h3>The Missing Layer</h3>
-                            <p>These meetings have been happening for years. Marketing in their lane. Lending in theirs. IT holding the keys. Everyone giving their side of the story.</p>
+                            <p>These meetings have been happening for years. Marketing in their lane. Lending in theirs. IT making sure none of it breaks. Everyone giving their side of the story.</p>
                             <p>The problem was never getting people in the room. It was that everyone left with a different version of what happened -- and went back to their systems with the same disconnected data they walked in with.</p>
                             <p>So the workarounds multiplied. One-off attribution codes. Single-system dashboards. Vendor tools that solved for one department's visibility without touching the others. Each one a reasonable response to an unreasonable situation.</p>
                             <p>What the data has always needed is a unified framework. One that pulls every system's story into a single, connected narrative. Not marketing's version. Not lending's version. The actual version.</p>
