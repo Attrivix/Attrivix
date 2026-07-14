@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -757,6 +758,13 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     .cta-card { width: 100%; max-width: 340px; }
   }
 </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xmjprhm4hb");
+</script>
 </head>
 <body>
 
@@ -967,7 +975,17 @@ transition: opacity 0.7s ease, transform 0.7s ease;
             {name:'email',value:document.getElementById('hs-email').value}
           ]})
         }).then(function(r){
-          if(r.ok){msg.style.color='#e8612a';ms
+          if(r.ok){msg.style.color='#e8612a';msg.textContent="You're on the list.";btn.textContent='Done';}
+          else{msg.style.color='#c0392b';msg.textContent='Something went wrong — email patricia@attrivix.com';btn.disabled=false;btn.textContent='Try again';}
+        }).catch(function(){
+          msg.style.color='#c0392b';msg.textContent='Something went wrong — email patricia@attrivix.com';btn.disabled=false;btn.textContent='Try again';
+        });
+      });
+      </script>
+    </div>
+
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
