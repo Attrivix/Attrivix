@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,6 +102,15 @@
     .footer-logo span { color: var(--orange-mid); }
     .footer-text { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
     footer a.footer-link { font-size: 0.75rem; color: var(--orange-mid); text-decoration: none; }
+    .media-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 2px; padding: 32px; }
+    .media-embed { position: relative; width: 100%; padding-top: 56.25%; margin: 20px 0; border-radius: 4px; overflow: hidden; background: var(--navy); }
+    .media-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .media-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .media-outlet { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-mid); background: var(--orange-light); padding: 4px 10px; border-radius: 2px; }
+    .media-title { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--navy); line-height: 1.3; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .media-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
+    .media-link { display: inline-block; margin-top: 16px; font-size: 0.82rem; font-weight: 500; color: var(--orange-mid); text-decoration: none; letter-spacing: 0.02em; }
+    .media-link:hover { text-decoration: underline; }
     @media (max-width: 900px) {
         nav { padding: 16px 24px; }
         .page-header { padding: 120px 24px 60px; }
@@ -113,6 +121,7 @@
         .post-body-inner { padding: 0 24px 36px; }
         .post-card.featured .post-title { font-size: 1.4rem; }
         .post-body-inner .cta-inline { flex-direction: column; }
+        .media-card { padding: 24px; }
     }
     </style>
     <script type="text/javascript">
@@ -142,6 +151,19 @@
     <div class="blog-grid-wrapper">
         <main>
             <div class="posts-list" id="posts-list">
+
+                <!-- MEDIA — August 20, 2026 -->
+                <div id="bits-and-banks-episode-18" class="post-card media-card" data-category="media" style="scroll-margin-top: 220px;">
+                    <div class="media-meta">
+                        <span class="media-outlet">Podcast</span>
+                        <span class="post-date">August 20, 2026</span>
+                    </div>
+                    <div class="media-title">Bits &amp; Banks — Episode 18: The Attribution Gap Facing Credit Unions</div>
+                    <p class="media-desc">I joined Aditya Khandekar on Bits &amp; Banks to unpack why credit union loan data sits scattered across marketing, underwriting, operations, and collections, and what it actually takes to close that gap: breaking down data silos with a true Member 360 view, pinpointing where bottlenecks are really happening across marketing, decisioning, and turnaround time, and putting budget behind what's proven to drive funded loans.</p>
+                    <a href="https://www.corridorplatforms.com/insights/podcast/bits-banks-with-patricia-thomas-episode-18" class="media-link" target="_blank">Watch the full episode &#8594;</a>
+                </div>
+
+                <div class="section-divider"><span>Recent Posts</span></div>
 
                 <!-- FEATURED POST — August 11, 2026 -->
                 <div id="copilot-building-underneath-it" class="post-card featured" data-category="ai-lending" style="scroll-margin-top: 220px;">
@@ -224,8 +246,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="section-divider"><span>Recent Posts</span></div>
 
                 <!-- POST — August 5, 2026 -->
                 <div id="outside-in-vs-inside-out" class="post-card compact" data-category="attribution" style="scroll-margin-top: 220px;">
@@ -445,6 +465,7 @@
                     <li><a onclick="filterPosts('all', this)" class="active">All Posts</a></li>
                     <li><a onclick="filterPosts('attribution', this)">Attribution</a></li>
                     <li><a onclick="filterPosts('ai-lending', this)">AI &amp; Decisioning</a></li>
+                    <li><a onclick="filterPosts('media', this)">Media</a></li>
                 </ul>
             </div>
             <div class="sidebar-block nl-inline">
