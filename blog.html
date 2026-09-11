@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,8 +166,50 @@
 
                 <div class="section-divider"><span>Recent Posts</span></div>
 
-                <!-- FEATURED POST — August 11, 2026 -->
-                <div id="copilot-building-underneath-it" class="post-card featured" data-category="ai-lending" style="scroll-margin-top: 220px;">
+                <!-- FEATURED POST — September 11, 2026 -->
+                <div id="ai-rate-referral-blind-spot" class="post-card featured" data-category="attribution" style="scroll-margin-top: 220px;">
+                    <div class="post-card-header" onclick="togglePost(this)">
+                        <div class="post-meta">
+                            <span class="post-tag">Attribution</span>
+                            <span class="post-date">September 11, 2026</span>
+                        </div>
+                        <div class="post-title">They Asked AI for a Rate. Your Report Says They Found Bankrate on Their Own.</div>
+                        <p class="post-excerpt">A member asks an AI assistant about HELOC rates and gets your credit union recommended by name. Your analytics logs a referral from Bankrate. The step that actually started the visit never shows up anywhere in your systems.</p>
+                        <div class="post-footer">
+                            <span class="post-author">Patricia Thomas</span>
+                            <span class="post-read-time">6 min read</span>
+                            <span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <div class="post-body-inner">
+                            <p>A member is comparing HELOC rates. Instead of Googling, they open Claude or ChatGPT and ask what a good HELOC rate looks like right now. The answer cites a rate table, usually from a site like Bankrate or NerdWallet. They click through, scan the table, then click again into your credit union's site.</p>
+                            <p>Your analytics platform logs one thing: a visit referred by Bankrate.</p>
+                            <p>The AI step, the moment they asked the question and got your credit union recommended to them, never shows up in your systems. Your analytics doesn't flag it as missing or unknown. It records ordinary traffic, a member who found a comparison site on their own. Nothing in the record hints that a step got skipped.</p>
+                            <h3>A different mechanism than the zero-click problem</h3>
+                            <p>Most coverage of AI and search traffic focuses on zero-click answers, cases where the AI gives a full answer and the user never visits a site at all. That's a real, well documented problem. What's happening here is different.</p>
+                            <p>Here, the member did click through. They landed on a real site, then yours. The traffic is real. What's missing is the step before the referral.</p>
+                            <div class="pull-quote"><p>Referrer tracking answers where a visitor came from, not what happened before that. An AI answer engine sits one step further back, and nothing in a standard analytics stack looks that far back.</p></div>
+                            <h3>The same mechanism shows up across every product line</h3>
+                            <p>This pattern isn't unique to HELOCs. Ask an AI assistant about auto loan rates and Bankrate shows up. Ask about mortgage rates and it's LendingTree. Ask about personal loans and it's NerdWallet again. Different comparison site depending on the product, same blind spot every time: a two-hop path where the first hop, the one that actually started the search, disappears.</p>
+                            <p>Credit unions pay these comparison sites for lead generation. That's a known, budgeted cost your team can see. What isn't visible is how much of that traffic actually started with a member asking an AI assistant a question, with the comparison site only acting as the middleman the AI pointed to.</p>
+                            <h3>Why this matters more every quarter</h3>
+                            <p>This isn't a hypothetical fading in relevance. More of the research phase for a loan decision moves into AI assistants every quarter, not less. LendingTree launched a ChatGPT plugin for mortgage rate search in August 2026. That's a comparison site building direct infrastructure for exactly this kind of AI-originated traffic, not a future possibility.</p>
+                            <p>Every quarter this mechanism stays invisible, the acquisition report drifts further from what actually happened. Comparison sites keep collecting credit for demand they redirected rather than demand they created. The channel that actually did the work, an AI platform recommending your credit union by name, earns no credit and no budget.</p>
+                            <p>The real cost isn't that the member failed to convert. They did convert. The real cost is that the report your team uses to plan next quarter's marketing budget is quietly wrong, in a way nobody is positioned to catch, because catching it means seeing a step standard referrer tracking was never built to see.</p>
+                            <h3>What actually closes the gap</h3>
+                            <p>There's no single switch that makes an AI platform report a referral the way Google Analytics reports a paid search click. No standard way exists yet for an AI assistant to pass along that a visit started with a question asked of it. That doesn't mean the gap can't be closed. Closing it means connecting the systems that already hold pieces of the answer, so you can trace a session carrying the fingerprints of an AI-originated visit through to the outcome it actually produced, not just the comparison site it passed through on the way.</p>
+                            <p>That's the layer Attrivix builds inside a credit union's own environment, linking the systems you already have so you can trace a funded loan back through every real touchpoint, comparison site included, to the moment that actually started it.</p>
+                            <div class="cta-inline">
+                                <p>Think your lead-gen numbers might be crediting the wrong channel?</p>
+                                <a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&ep=pcard">Book 30 minutes &#8594;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST — August 11, 2026 -->
+                <div id="copilot-building-underneath-it" class="post-card compact" data-category="ai-lending" style="scroll-margin-top: 220px;">
                     <div class="post-card-header" onclick="togglePost(this)">
                         <div class="post-meta">
                             <span class="post-tag">AI & Decisioning</span>
