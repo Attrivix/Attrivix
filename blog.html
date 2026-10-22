@@ -19,10 +19,11 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--t
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(248, 248, 246, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .logo { font-family: 'DM Sans', sans-serif; font-size: 1.8rem; color: var(--navy); letter-spacing: 0.01em; text-decoration: none; font-weight: 700; }
 .logo span { color: var(--orange-mid); }
-.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links { display: flex; align-items: center; gap: 10px; }
 nav a.nav-cta { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding: 10px 22px; border: 1px solid var(--navy); border-radius: 2px; transition: background 0.2s, color 0.2s; }
 nav a.nav-cta:hover { background: var(--navy); color: var(--white); }
-nav a.nav-ghost { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+nav a.nav-ghost { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding: 10px 22px; border: 1px solid var(--navy); border-radius: 2px; transition: background 0.2s, color 0.2s; }
+nav a.nav-ghost:hover { background: var(--navy); color: var(--white); }
 .page-header { padding: 160px 48px 80px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
 .eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-mid); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
 .eyebrow::before, .eyebrow::after { content: ''; display: block; width: 32px; height: 1px; background: var(--orange-mid); }
@@ -112,8 +113,10 @@ footer a.footer-link { font-size: 0.75rem; color: var(--orange-mid); text-decora
 .media-link { display: inline-block; margin-top: 16px; font-size: 0.82rem; font-weight: 500; color: var(--orange-mid); text-decoration: none; letter-spacing: 0.02em; }
 .media-link:hover { text-decoration: underline; }
 @media (max-width: 900px) {
-nav { padding: 16px 24px; }
-.page-header { padding: 120px 24px 60px; }
+nav { padding: 12px 16px; flex-wrap: wrap; gap: 10px; }
+.nav-links { width: 100%; }
+.nav-links a.nav-ghost, .nav-links a.nav-cta { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 9px 8px; font-size: 0.68rem; align-self: stretch; }
+.page-header { padding: 150px 24px 60px; }
 .blog-grid-wrapper { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
 .sidebar { position: static; }
 footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
@@ -138,6 +141,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a href="index.html" class="logo">Attri<span>vix</span></a>
 <div class="nav-links">
 <a href="index.html" class="nav-ghost">Home</a>
+<a href="ai-tools-rankings.html" class="nav-ghost">AI Tools Rankings</a>
 <a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&ep=pcard" class="nav-cta">Book a Call</a>
 </div>
 </nav>
