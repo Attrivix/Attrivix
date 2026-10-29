@@ -111,18 +111,18 @@ footer .footer-social a:hover,footer .footer-social a:focus-visible{color:var(--
 .secnav a:focus-visible,.totop:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 section[id],.jump,.disclosure{scroll-margin-top:var(--offset)}
 /* back to top */
-.totop{position:fixed;right:24px;bottom:24px;z-index:110;width:48px;height:48px;border-radius:50%;border:2px solid var(--orange);background:var(--navy);color:var(--orange);font-family:'DM Sans',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(13,31,53,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s,background .2s,color .2s}
+.totop{position:fixed;right:24px;bottom:96px;z-index:110;width:48px;height:48px;border-radius:50%;border:2px solid var(--orange);background:var(--navy);color:var(--orange);font-family:'DM Sans',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(13,31,53,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s,background .2s,color .2s}
 .totop.show{opacity:1;visibility:visible;transform:none}
 .totop:hover{background:var(--orange);color:var(--white)}
 .totop svg{width:20px;height:20px}
 /* floating sections pop-out */
-.secpop{position:fixed;right:24px;bottom:84px;z-index:120;font-family:'DM Sans',sans-serif}
+.secpop{position:fixed;right:24px;bottom:156px;z-index:120;font-family:'DM Sans',sans-serif}
 .secpop-btn{display:flex;align-items:center;gap:8px;height:44px;padding:0 18px 0 15px;border-radius:22px;border:2px solid var(--orange);background:var(--navy);color:var(--white);font-family:inherit;font-size:.9rem;font-weight:500;letter-spacing:.02em;cursor:pointer;box-shadow:0 4px 14px rgba(13,31,53,.25);transition:background .2s}
 .secpop-btn svg{width:18px;height:18px;color:var(--orange);transition:color .2s}
 .secpop-btn:hover,.secpop-btn[aria-expanded="true"]{background:var(--orange)}
 .secpop-btn:hover svg,.secpop-btn[aria-expanded="true"] svg{color:var(--white)}
 .secpop-btn:focus-visible,.secpop-panel a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
-.secpop-panel{position:absolute;right:0;bottom:56px;width:min(290px,calc(100vw - 32px));max-height:min(520px,calc(100vh - 170px));overflow-y:auto;background:var(--white);border:1px solid var(--border);border-top:3px solid var(--orange);border-radius:6px;box-shadow:0 12px 36px rgba(13,31,53,.22);padding:8px 0}
+.secpop-panel{position:absolute;right:0;bottom:56px;width:min(290px,calc(100vw - 32px));max-height:min(520px,calc(100vh - 240px));overflow-y:auto;background:var(--white);border:1px solid var(--border);border-top:3px solid var(--orange);border-radius:6px;box-shadow:0 12px 36px rgba(13,31,53,.22);padding:8px 0}
 .secpop-panel[hidden]{display:none}
 .secpop-panel .ph{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--orange);font-weight:500;padding:8px 18px 6px}
 .secpop-panel ul{list-style:none}
@@ -143,8 +143,8 @@ dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}
 footer{padding:30px 24px;flex-direction:column;align-items:flex-start}
 html{--navh:67px;--subh:45px}
 .secnav ul{padding:0 14px;gap:0;justify-content:flex-start}.secnav a{padding:11px 10px 10px;font-size:.78rem}
-.totop{right:16px;bottom:16px;width:44px;height:44px}
-.secpop{right:16px;bottom:72px}.secpop-btn{height:42px}
+.totop{right:16px;bottom:92px;width:44px;height:44px}
+.secpop{right:16px;bottom:148px}.secpop-btn{height:42px}
 }
 
 /* Sticky "Book a 30-min call" button */
@@ -152,7 +152,7 @@ html{--navh:67px;--subh:45px}
 .sticky-cta.is-visible { opacity:1; visibility:visible; transform:none; transition:opacity .25s ease, transform .25s ease, visibility 0s, background .2s; }
 .sticky-cta:hover { background:var(--navy-mid); }
 .sticky-cta:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
-@media (max-width:639px) { .sticky-cta { left:16px; bottom:16px; max-width:calc(100% - 96px); padding:12px 20px; font-size:0.8rem; } }
+@media (max-width:639px) { .sticky-cta { left:16px; bottom:16px; max-width:calc(100% - 110px); padding:12px 20px; font-size:0.8rem; } }
 @media (prefers-reduced-motion:reduce) { .sticky-cta, .sticky-cta.is-visible { transition:none; transform:none; } }
 </style>
 <script type="text/javascript">
@@ -263,5 +263,8 @@ onScroll();
   }
 })();
 </script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246264806.js"></script>
+<!-- End of HubSpot Embed Code -->
 </body>
 </html>
