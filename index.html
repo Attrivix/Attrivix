@@ -46,7 +46,7 @@ section { padding:100px 48px; max-width:1100px; margin:0 auto; }
 h2 { font-size:clamp(2rem,4vw,3rem); color:var(--navy); line-height:1.15; max-width:680px; margin-bottom:24px; }
 h2 em { font-style:normal; color:var(--orange-mid); }
 .body-text { font-size:1.05rem; color:var(--muted); max-width:600px; line-height:1.75; font-weight:300; }
-.symptoms { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; margin-top:60px; background:var(--border); }
+.symptoms { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; background:var(--border); }
 .symptom { background:var(--white); padding:36px 32px; }
 .symptom-num { font-size:3.5rem; color:rgba(232,97,42,0.12); line-height:1; margin-bottom:12px; }
 .symptom-title { font-size:0.9rem; font-weight:500; color:var(--navy); margin-bottom:8px; }
@@ -124,6 +124,10 @@ section, .what-changes, .who, .cta-section { padding:70px 24px; }
 .sticky-cta:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
 @media (max-width:639px) { .sticky-cta { left:16px; bottom:16px; max-width:calc(100% - 110px); padding:12px 20px; font-size:0.8rem; } }
 @media (prefers-reduced-motion:reduce) { .sticky-cta, .sticky-cta.is-visible { transition:none; transform:none; } }
+
+/* Pain cards above the fold — full-width strip */
+.pain-strip { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.pain-strip .symptoms { max-width:1100px; margin:0 auto; }
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -155,6 +159,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="scroll-line"></div>
 </div>
 </section>
+<div class="pain-strip">
+<div class="symptoms">
+<div class="symptom"><div class="symptom-num">01</div><div class="symptom-title">Waiting on IT</div><div class="symptom-text">Every data question is a ticket. Every ticket is a week.</div></div>
+<div class="symptom"><div class="symptom-num">02</div><div class="symptom-title">Exporting CSVs by hand</div><div class="symptom-text">Core. HubSpot. Call center. Website. Four exports. Still unclear.</div></div>
+<div class="symptom"><div class="symptom-num">03</div><div class="symptom-title">Unclear attribution</div><div class="symptom-text">Leadership asks what the campaign returned. You can't prove exactly how.</div></div>
+<div class="symptom"><div class="symptom-num">04</div><div class="symptom-title">Missed campaign failures</div><div class="symptom-text">A campaign fails to deploy. You find out three weeks later.</div></div>
+</div>
+</div>
 <div class="quote-strip">
 <blockquote>"When leadership asks what marketing returned in funded loans last quarter, the honest answer is: we can correlate — but we can't prove it."</blockquote>
 <cite>The question every CU marketing team gets asked</cite>
@@ -163,12 +175,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <div class="section-label">The Problem</div>
 <h2>Banks have enterprise martech.<br><em>Credit unions have spreadsheets.</em></h2>
 <p class="body-text">No one has built systems for the way credit unions actually work.</p>
-<div class="symptoms">
-<div class="symptom"><div class="symptom-num">01</div><div class="symptom-title">Waiting on IT</div><div class="symptom-text">Every data question is a ticket. Every ticket is a week.</div></div>
-<div class="symptom"><div class="symptom-num">02</div><div class="symptom-title">Exporting CSVs by hand</div><div class="symptom-text">Core. HubSpot. Call center. Website. Four exports. Still unclear.</div></div>
-<div class="symptom"><div class="symptom-num">03</div><div class="symptom-title">Unclear attribution</div><div class="symptom-text">Leadership asks what the campaign returned. You can't prove exactly how.</div></div>
-<div class="symptom"><div class="symptom-num">04</div><div class="symptom-title">Missed campaign failures</div><div class="symptom-text">A campaign fails to deploy. You find out three weeks later.</div></div>
-</div>
 </section>
 <div class="what-changes">
 <div class="what-changes-inner">
