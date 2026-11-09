@@ -261,6 +261,57 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </div>
 
 <!-- POST - September 28, 2026 -->
+<div id="los-data-in-your-tenant" class="post-card compact" data-category="attribution" style="scroll-margin-top: 220px;">
+<div class="post-card-header" onclick="togglePost(this)">
+<div class="post-meta">
+<span class="post-tag">Attribution</span>
+<span class="post-date">November 9, 2026</span>
+</div>
+<div class="post-title">What LOS Data in Your Own Tenant Does and Doesn't Solve</div>
+<p class="post-excerpt">Origence just put LOS data into Fabric and Snowflake. Getting one system's data into your tenant is getting easier. Connecting it so you can see what came before a funded loan is still the hard part.</p>
+<div class="post-footer">
+<span class="post-author">Patricia Thomas</span>
+<span class="post-read-time">5 min read</span>
+<span class="expand-toggle">Read full post <i class="toggle-icon">&#8964;</i></span>
+</div>
+</div>
+<div class="post-body">
+<div class="post-body-inner">
+<p>When I worked behind the scenes at credit unions, getting loan origination data out meant asking a team to request a file with the fields we needed and export it as a CSV. Someone else pulled it, and we got a flat file back. Then we tried to make sense of it next to whatever lived on the core.</p>
+<p>On November 3, 2026, Origence announced <a href="https://www.globenewswire.com/news-release/2026/11/03/3394653/0/en/origence-launches-origence-data-access-offering-credit-unions-six-ways-to-access-and-share-origination-data.html" target="_blank">Origence Data Access</a>. One piece of that suite is Lakehouse Sharing. It puts a read-only view, refreshed throughout the day, of direct lending, indirect lending, and account-opening data into a credit union's own Microsoft Fabric or Snowflake environment. Origence describes it as zero-copy, with no extraction pipeline or duplicate datasets to maintain. That's a big change from the request-and-export cycle.</p>
+<p>Origence did not replace every older path either. The same suite still includes scheduled reports by email or SFTP, interactive reports inside arc OS, APIs, and custom data and image extracts managed by their implementation team. So CUs can pick the access method that matches how they work today. MeridianLink has been moving the same direction with <a href="https://www.meridianlink.com/products/meridianlink-data-connect/" target="_blank">Data Connect</a>, which feeds structured Consumer and Opening origination data into a credit union's warehouse. Jack Henry <a href="https://jkhy.github.io/data-broker/overview/" target="_blank">Data Hub</a> does a similar job for Jack Henry product data into an institution's own warehouse. Getting one system's data into a place you control is getting easier.</p>
+<p></p>
+<p>A funded loan in the LOS does not, by itself, show which campaign, branch visit, or call came before it. Origence's materials describe the share. They don't describe what connects it to core, CRM, credit bureau or marketing data once it's there. Someone still has to do that work. The share is one system. The path to a funded loan can cross several.</p>
+<h3>What the surveys say about where CUs are</h3>
+<p>The <a href="https://www.jackhenry.com/hubfs/resources/reports/2025-FinXTech-Credit-Union-Survey.pdf" target="_blank">2025 FinXTech Credit Union Survey</a> (Jack Henry; 52 senior CU technology executives, October-November 2025) asked how credit unions manage data.</p>
+<ul>
+<li>40% use a data lake or warehouse to combine data from different sources</li>
+<li>60% keep data in the system or platform that generates or uses it</li>
+<li>34% use spreadsheets to manage data used by business lines</li>
+<li>54% rely on their core provider to access their data</li>
+</ul>
+<p>In the same survey, only 46% of those respondents said they use data analytics effectively in marketing. Only 31% said the same for operations. (<a href="https://www.jackhenry.com/fintalk/winning-strategies-for-credit-unions-compete-with-fintechs-and-elevate-member-experience" target="_blank">FinTalk summary</a>)</p>
+<p>Cornerstone Advisors' <a href="https://www.crnrstone.com/hubfs/WGOIB%202025/2025_Whats-Going-On-in-Banking_Cornerstone-Advisors.pdf" target="_blank">What's Going On in Banking 2025</a> found that only 11% of credit unions rated their data strategy "very effective," and 42% said their use of data to improve operational efficiency was not effective. (<a href="https://www.mx.com/blog/whats-going-on-in-banking-key-takeaways/" target="_blank">MX summary</a>)</p>
+<p>So a share of credit unions already combine sources in a lake or warehouse. A larger share still keep data where it was created. Some have moved past CSV exports. The survey numbers show many have not finished connecting the pieces.</p>
+<h3>AI inside one system</h3>
+<p>Vendors are shipping AI inside the platforms credit unions already run. MeridianLink Intelligence, nicknamed Millie, is embedded in MeridianLink One. The first agent, Doc Agent for Mortgage, was announced in May and is slated for general availability in Q4 2026. It's aimed at document workflows inside that lending platform (<a href="https://www.meridianlink.com/press-release/meet-millie-meridianlink-intelligence-agents-embed-ai-within-meridianlink-one-platform/" target="_blank">MeridianLink, May 12, 2026</a>). The same pattern shows up elsewhere. nCino has a set of AI agents it calls Digital Partners, built around its own lending workflow, and one of them, the Client Digital Partner, reaches members through the credit union's digital banking. Q2 Assistant sits across Q2 products.</p>
+<p>I have not found a vendor AI that reasons across the core, the LOS, marketing and the call center without the credit union first putting those sources together.</p>
+<h3>Credit unions that put the work in</h3>
+<p>Some credit unions are building that foundation on purpose. <a href="https://www.microsoft.com/en/customers/story/23344-members-1st-federal-credit-union-microsoft-fabric" target="_blank">Members 1st Federal Credit Union</a> serves more than 600,000 members across nearly 60 branches. Working with Microsoft partner 3Cloud, they built M1-360 on Azure using Azure SQL, Azure Data Factory, and Azure Databricks. They centralized data from more than 15 sources, more than 20 terabytes, into a lakehouse. They added Microsoft Fabric on top so analysts could publish reports that update daily instead of monthly. Machine learning models that took 36 hours dropped to about three to four hours. "Think big but work small," said Greg Lowe, their data architect. The credit union describes it as a multi-year data journey of small wins, and it is the kind of work that makes later AI useful because there is something real underneath it.</p>
+<p>ORNL Federal Credit Union took a managed warehouse path with Arkatechture, bringing Symitar, CUDL, and other sources into Arkatechture's Arkalytics platform, built on AWS with Snowflake and Tableau. (<a href="https://www.arkatechture.com/hubfs/ORNL%20FCU%20-%20Arkalytics%20Case%20Study.pdf" target="_blank">ORNL case study</a>) They connected the sources first, so the reports and models had something solid underneath them.</p>
+<h3>What this means for AI and outreach</h3>
+<p>If you want AI or member outreach to start from something trustworthy, start from the credit union's own connected source of truth. You can add outside vendor data on top. An LOS share into Fabric or Snowflake is a strong step. It still has to meet the core, marketing, and call-center history before you can see the path that led to the funded loan.</p>
+<p>That is the lane I am building Attrivix for. Attrivix is a semantic layer that lives in the credit union's own Microsoft tenant and gives a 360° member view across systems that do not talk to each other, so AI has connected data to work from.</p>
+<p>In that FinXTech survey, 60% of credit unions still keep data in the system that generated it. Getting LOS data into your tenant is the first step. Connecting it to core, marketing, and call-center history so you can see what came before a funded loan is the step most credit unions haven't reached.</p>
+<p style="font-size: 0.8rem; color: var(--muted); margin-top: 32px;">Sources: <a href="https://www.globenewswire.com/news-release/2026/11/03/3394653/0/en/origence-launches-origence-data-access-offering-credit-unions-six-ways-to-access-and-share-origination-data.html" target="_blank" style="color: var(--orange-mid);">Origence Data Access (Nov. 3, 2026)</a>, <a href="https://cdn.brandfolder.io/REYPXFNH/as/7zx7vz998v8p4sts4n3wwnxv/Origence_Data_Access__Lakehouse_Sharing.pdf" target="_blank" style="color: var(--orange-mid);">Origence Lakehouse Sharing PDF</a>, <a href="https://www.meridianlink.com/products/meridianlink-data-connect/" target="_blank" style="color: var(--orange-mid);">MeridianLink Data Connect</a>, <a href="https://jkhy.github.io/data-broker/overview/" target="_blank" style="color: var(--orange-mid);">Jack Henry Data Hub</a>, <a href="https://www.jackhenry.com/hubfs/resources/reports/2025-FinXTech-Credit-Union-Survey.pdf" target="_blank" style="color: var(--orange-mid);">2025 FinXTech Credit Union Survey</a>, <a href="https://www.jackhenry.com/fintalk/winning-strategies-for-credit-unions-compete-with-fintechs-and-elevate-member-experience" target="_blank" style="color: var(--orange-mid);">Jack Henry FinTalk</a>, <a href="https://www.crnrstone.com/hubfs/WGOIB%202025/2025_Whats-Going-On-in-Banking_Cornerstone-Advisors.pdf" target="_blank" style="color: var(--orange-mid);">Cornerstone WGOIB 2025</a>, <a href="https://www.mx.com/blog/whats-going-on-in-banking-key-takeaways/" target="_blank" style="color: var(--orange-mid);">MX / Cornerstone summary</a>, <a href="https://www.meridianlink.com/press-release/meet-millie-meridianlink-intelligence-agents-embed-ai-within-meridianlink-one-platform/" target="_blank" style="color: var(--orange-mid);">MeridianLink Millie</a>, <a href="https://www.microsoft.com/en/customers/story/23344-members-1st-federal-credit-union-microsoft-fabric" target="_blank" style="color: var(--orange-mid);">Members 1st / Microsoft</a>, <a href="https://www.arkatechture.com/hubfs/ORNL%20FCU%20-%20Arkalytics%20Case%20Study.pdf" target="_blank" style="color: var(--orange-mid);">ORNL / Arkatechture</a>.</p>
+<div class="cta-inline">
+<p>Want to talk through how a live LOS share meets the rest of your stack?</p>
+<a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&amp;ep=pcard">Book 30 minutes &#8594;</a>
+</div>
+</div>
+</div>
+</div>
+
 <div id="form-1098-vli-fields" class="post-card compact" data-category="attribution" style="scroll-margin-top: 220px;">
 <div class="post-card-header" onclick="togglePost(this)">
 <div class="post-meta">
