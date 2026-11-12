@@ -118,13 +118,37 @@ footer p{max-width:900px;margin-bottom:10px}
 </section>
 
 <section class="card full">
-  <h2>Household example: one spouse calls, the other books</h2>
-  <p class="sub">185 cases in the demo data</p>
+  <h2>Households: one spouse calls, the other books</h2>
+  <p class="sub">185 cases of this kind in the demo data</p>
   <div class="pills">
-    <div class="pill"><b>185 of 185</b> calling spouses identified correctly</div>
+    <div class="pill"><b>3,475 of 3,475</b> households rebuilt from name, address, and phone</div>
+    <div class="pill"><b>185 of 185</b> calls linked to the other spouse's loan</div>
     <div class="pill"><b>$15.7M</b> in borrowing spouse loans behind those calls</div>
   </div>
-  <div class="status"><b>Where this stands today:</b> each call is matched to the right person, but it is not yet connected to the other spouse's loan. Linking calls to loans across a household is being built now.</div>
+  <div class="status"><b>How this was built and where it stops:</b> The core's own household ID was left out. Attrivix infers each household from name, address, and phone, then links a touch to another household member's funded loan when the touch falls in the 14 days before that loan's application. The demo addresses are clean, so the first number is the easy one. On a copy with 57% of addresses and 6% of surnames degraded (typos, abbreviations, stray unit numbers, hyphenated names), the same rules kept 100% precision and found 96.5% of household pairs. The 14 day window was set with these planted cases in view, so a real credit union will need its own check. 150 more touches from a household member land in the same window. The answer key does not label them, so they are not counted here.</div>
+</section>
+
+<section class="card full">
+  <h2>After matching: tokens only</h2>
+  <p class="sub">Matching runs on the original data first, because fuzzy matching cannot run on hashed values</p>
+  <div class="pills">
+    <div class="pill"><b>56,605</b> text values scanned in the tokenized tables</div>
+    <div class="pill"><b>0</b> original member IDs, emails, phones, or names found</div>
+  </div>
+  <p class="note">Once households and links are final, member and household IDs become keyed tokens (HMAC-SHA256), and names, emails, phones, and addresses are dropped. The same scan finds a value we plant on purpose, so a result of zero means something.</p>
+  <div class="status"><b>Where this stands today:</b> the tokenization code runs on the demo dataset with a demo key file. Holding the key in Azure Key Vault inside the credit union's tenant, and running the matching step in a confidential computing enclave, are not built or verified yet.</div>
+</section>
+
+<section class="card full">
+  <h2>Review loop: questions get asked once</h2>
+  <p class="sub">Matches the engine will not decide alone go to a person, and the answer is kept</p>
+  <div class="pills">
+    <div class="pill"><b>3 touches</b> waiting for a reviewer today, 4,493 of 4,496 resolved</div>
+    <div class="pill"><b>4,496 of 4,496</b> resolved after review, 0 wrong</div>
+    <div class="pill"><b>16 to 0</b> household pairs in the queue after review</div>
+  </div>
+  <p class="note">On the messy address copy, a reviewer confirming 16 near-miss household pairs lifted household recall from 96.5% to 97.6% with precision held at 100%. A saved decision applies on every later run, so the same pair is not asked about again. A touch decision settles only that touch. Two of the queued touches carry the same email and the same name, yet belong to two different people, so a decision is never turned into a rule for other touches. A decision that names someone the evidence never pointed to is refused.</p>
+  <div class="status"><b>Where this stands today:</b> the reviewer in this demo is simulated from the answer key. The queue and the decisions are files. Sending each question to the loan officer on the file, and escalating when that person leaves, is not built.</div>
 </section>
 
 <section class="card full">
