@@ -103,7 +103,7 @@ footer p + p{margin-top:8px}
       <div class="lbl a-r" data-p="-10.5,-1.5,0.8"><div>Call center</div></div>
       <div class="lbl a-r" data-p="-10.5,-3.0,-0.6"><div>Website</div></div>
       <div class="lbl layer a-c" data-p="-4.6,4.55,0"><div>Layer 1<br>Ingestion<small>Target design</small></div></div>
-      <div class="lbl layer a-c" data-p="0.2,4.55,0"><div>Layer 2<br>Resolution and logic<small>Partly shown</small></div></div>
+      <div class="lbl layer a-c" data-p="0.2,4.55,0"><div>Layer 2<br>Resolution and logic<small>Shown on demo data</small></div></div>
       <div class="lbl layer a-c" data-p="4.8,4.55,0"><div>Layer 3<br>Output<small>Tables shown</small></div></div>
       <div class="lbl tenant a-c" data-p="0,-4.5,0"><div>Inside the credit union's Microsoft tenant. No data leaves.</div></div>
       <div class="lbl a-l" data-p="9.3,1.2,0"><div class="bubble">
@@ -139,8 +139,8 @@ footer p + p{margin-top:8px}
     </article>
     <article>
       <h2>Layer 2, Resolution and logic</h2>
-      <span class="status">Partly shown</span>
-      <p>Matching people across emails and phones, and the U-shaped attribution, run on the demo dataset. Linking a spouse's call to the other spouse's loan, and tokenizing personal data, are being built now.</p>
+      <span class="status">Shown on demo data</span>
+      <p>Matching people across emails and phones, building households from name, address, and phone, linking a spouse's call to the other spouse's loan, tokenizing after matching, and the U-shaped attribution all run on the demo dataset. Key storage in Azure Key Vault and the secure enclave are not built yet.</p>
     </article>
     <article>
       <h2>Layer 3, Output</h2>
@@ -221,7 +221,7 @@ footer p + p{margin-top:8px}
   // Layers
   slab(-4.6,5.4,6.4,true, WHITE,SLAB,0.18);
   slab(0.2, 5.4,6.4,false,WHITE,SLAB,0.22);
-  slab(1.9, 4.4,5.2,true, ORANGE_SOFT,0x6B3A2A,0.10);
+  slab(1.9, 4.4,5.2,false,ORANGE_SOFT,0x6B3A2A,0.10);
   slab(4.8, 5.4,6.4,false,WHITE,SLAB,0.22);
 
   // Source boxes and connectors
@@ -241,7 +241,7 @@ footer p + p{margin-top:8px}
     var n=new THREE.Mesh(sph,new THREE.MeshBasicMaterial({color:ORANGE}));
     n.position.set(2.7,laneY[i],laneZ[i]); scene.add(n);
   }
-  polyline([new THREE.Vector3(2.7,laneY[2],laneZ[2]),new THREE.Vector3(2.7,laneY[3],laneZ[3])],ORANGE_SOFT,true,1);
+  polyline([new THREE.Vector3(2.7,laneY[2],laneZ[2]),new THREE.Vector3(2.7,laneY[3],laneZ[3])],ORANGE_SOFT,false,1);
 
   // Output bars
   var BARH=[1.2,2.0,1.6,2.6,1.0], BARZ=[-1.6,-0.8,0,0.8,1.6], BASE=-2.6;
