@@ -53,8 +53,10 @@ nav a.nav-cta:hover, nav a.nav-ghost:hover { background:var(--navy); color:var(-
 .toc { list-style:none; margin:8px 0 8px 0; padding:20px 24px; background:var(--white); border:1px solid var(--border); border-radius:4px; }
 .toc li { margin-bottom:6px; }
 .toc a { font-size:0.9rem; font-weight:500; }
-.contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin:28px 0 36px; }
-.contact-card { background:var(--white); border:1px solid var(--border); border-radius:4px; padding:28px 24px; }
+.contact-wrap { max-width:1100px; margin:0 auto; padding:8px 48px 0; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:28px auto 36px; align-items:stretch; }
+.contact-card { background:var(--white); border:1px solid var(--border); border-radius:4px; padding:28px 24px; display:flex; flex-direction:column; align-items:center; text-align:center; height:100%; }
+.contact-card .btn-primary, .contact-card .btn-secondary { margin-top:auto; }
 .contact-card .label { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange-mid); margin-bottom:10px; font-weight:500; }
 .contact-card h2 { font-size:1.2rem; margin:0 0 10px; }
 .contact-card p { font-size:0.9rem; color:var(--muted); font-weight:400; line-height:1.7; margin-bottom:18px; }
@@ -79,6 +81,8 @@ footer a.footer-link:hover { color:#8C3B19; }
 .skip-link { position:absolute; left:16px; top:-48px; z-index:200; background:var(--navy); color:var(--white); padding:10px 16px; font-size:0.9rem; font-weight:500; text-decoration:none; border-radius:2px; }
 .skip-link:focus { top:16px; outline:3px solid var(--orange); outline-offset:3px; }
 @media (max-width:768px) {
+  .contact-wrap { padding-left:24px; padding-right:24px; }
+  .contact-grid { grid-template-columns:1fr; }
   nav { padding:12px 16px; flex-wrap:wrap; gap:10px; }
   .logo { font-size:1.4rem; }
   .nav-links { width:100%; }
@@ -115,9 +119,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <header class="page-header">
 <div class="eyebrow">Support</div>
 <h1>How to get in touch</h1>
-<p>Attrivix is the enterprise data layer for credit unions. It unifies data from systems that do not talk to each other inside the credit union’s own Microsoft tenant. If you have a question about the product, this website, or The CU Shortlist, here is how to reach us.</p>
+<p>Attrivix is the enterprise data layer for credit unions. It unifies data from systems that do not talk to each other inside the credit union’s own Microsoft tenant. If you have a question about the product, this website, the <a href="ai-tools-rankings.html">AI Tools Rankings</a>, or The CU Shortlist, here is how to reach us.</p>
 </header>
-<article class="legal">
+<div class="contact-wrap">
 <div class="contact-grid">
 <div class="contact-card">
 <div class="label">Email</div>
@@ -132,6 +136,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <a class="btn-secondary" href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&amp;ep=pcard" target="_blank" rel="noopener" onclick="gtag('event','book_call_click',{event_category:'engagement',event_label:'support_page'})" aria-label="Book a 30-min call (opens in a new tab)">Book a 30-min call</a>
 </div>
 </div>
+</div>
+<article class="legal">
 
 <h2>What to expect</h2>
 <p>We read every message and will get back to you as soon as we can. If something is urgent, start a chat with us using the chat bubble at the bottom right of this page. The best ways to reach us otherwise are email or a booked call.</p>
