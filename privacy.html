@@ -31,18 +31,26 @@ nav a.nav-cta:hover, nav a.nav-ghost:hover { background:var(--navy); color:var(-
 .page-header { padding:160px 48px 48px; max-width:1100px; margin:0 auto; border-bottom:1px solid var(--border); }
 .page-header .eyebrow { font-size:0.72rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange-mid); margin-bottom:20px; }
 .page-header h1 { font-family:'DM Sans',sans-serif; font-weight:700; font-size:clamp(2.4rem,5vw,3.6rem); line-height:1.1; color:var(--navy); max-width:720px; margin-bottom:16px; letter-spacing:-0.02em; }
-.page-header p { font-size:1.05rem; color:var(--muted); max-width:620px; font-weight:300; line-height:1.7; }
+.page-header p { font-size:1.05rem; color:var(--muted); max-width:620px; font-weight:400; line-height:1.7; }
+.page-header a { color:#A6451E; text-decoration:underline; }
+.page-header a:hover { color:#8C3B19; }
+.page-header .opt-out { margin-top:10px; font-size:0.9rem; font-weight:500; letter-spacing:0; text-transform:none; }
 .page-header .meta { margin-top:16px; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); font-weight:500; }
 .legal { max-width:760px; margin:0 auto; padding:48px 48px 120px; }
 .legal h2 { font-size:1.35rem; font-weight:700; color:var(--navy); line-height:1.25; max-width:none; margin:44px 0 14px; }
 .legal h3 { font-size:1.05rem; font-weight:700; color:var(--navy); margin:28px 0 10px; }
-.legal p, .legal li { font-size:0.98rem; color:var(--text); font-weight:300; line-height:1.85; }
+.legal p, .legal li { font-size:0.98rem; color:var(--text); font-weight:400; line-height:1.85; }
 .legal p { margin-bottom:16px; }
 .legal ul, .legal ol { margin:0 0 16px 1.3rem; }
 .legal li { margin-bottom:8px; }
-.legal a { color:var(--orange-mid); text-decoration:none; }
-.legal a:hover { text-decoration:underline; }
-.legal address { font-style:normal; font-weight:300; line-height:1.8; margin-bottom:16px; }
+.legal a { color:#A6451E; text-decoration:underline; }
+.legal a:hover { color:#8C3B19; }
+.legal a.btn-primary, .legal a.btn-secondary { text-decoration:none; }
+.legal a.btn-primary { color:var(--white); }
+.legal a.btn-primary:hover { color:var(--white); }
+.legal a.btn-secondary { color:var(--navy); }
+.legal a.btn-secondary:hover { color:var(--white); }
+.legal address { font-style:normal; font-weight:400; line-height:1.8; margin-bottom:16px; }
 .toc { list-style:none; margin:8px 0 8px 0; padding:20px 24px; background:var(--white); border:1px solid var(--border); border-radius:4px; }
 .toc li { margin-bottom:6px; }
 .toc a { font-size:0.9rem; font-weight:500; }
@@ -50,7 +58,7 @@ nav a.nav-cta:hover, nav a.nav-ghost:hover { background:var(--navy); color:var(-
 .contact-card { background:var(--white); border:1px solid var(--border); border-radius:4px; padding:28px 24px; }
 .contact-card .label { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange-mid); margin-bottom:10px; font-weight:500; }
 .contact-card h2 { font-size:1.2rem; margin:0 0 10px; }
-.contact-card p { font-size:0.9rem; color:var(--muted); font-weight:300; line-height:1.7; margin-bottom:18px; }
+.contact-card p { font-size:0.9rem; color:var(--muted); font-weight:400; line-height:1.7; margin-bottom:18px; }
 .btn-primary { display:inline-block; background:var(--navy); color:var(--white); padding:13px 28px; font-size:0.85rem; font-weight:500; text-decoration:none; border-radius:2px; }
 .btn-primary:hover { background:var(--navy-mid); }
 .btn-secondary { display:inline-block; background:transparent; color:var(--navy); padding:13px 28px; font-size:0.85rem; font-weight:500; text-decoration:none; border:1px solid var(--navy); border-radius:2px; }
@@ -63,12 +71,14 @@ footer .footer-social { display:flex; align-items:center; gap:12px; font-family:
 footer .footer-social .fs-label { font-size:.75rem; color:var(--muted); letter-spacing:.06em; }
 footer .footer-social a { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; color:var(--navy); transition:color .15s; }
 footer .footer-social a:hover, footer .footer-social a:focus-visible { color:var(--orange); }
-footer a.footer-link { font-size:0.75rem; color:var(--orange-mid); text-decoration:none; }
-footer a.footer-link:hover { text-decoration:underline; }
+footer a.footer-link { font-size:0.75rem; color:#A6451E; text-decoration:underline; }
+footer a.footer-link:hover { color:#8C3B19; }
 .sticky-cta { position:fixed; left:24px; bottom:24px; z-index:90; display:inline-block; background:var(--navy); color:var(--white); padding:14px 26px; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; letter-spacing:0.04em; line-height:1.2; text-decoration:none; border-radius:2px; box-shadow:0 6px 20px rgba(13,31,53,0.28); opacity:0; visibility:hidden; transform:translateY(12px); transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s, background .2s; }
 .sticky-cta.is-visible { opacity:1; visibility:visible; transform:none; transition:opacity .25s ease, transform .25s ease, visibility 0s, background .2s; }
 .sticky-cta:hover { background:var(--navy-mid); }
 .sticky-cta:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+.skip-link { position:absolute; left:16px; top:-48px; z-index:200; background:var(--navy); color:var(--white); padding:10px 16px; font-size:0.9rem; font-weight:500; text-decoration:none; border-radius:2px; }
+.skip-link:focus { top:16px; outline:3px solid var(--orange); outline-offset:3px; }
 @media (max-width:768px) {
   nav { padding:12px 16px; flex-wrap:wrap; gap:10px; }
   .logo { font-size:1.4rem; }
@@ -92,20 +102,23 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </script>
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 <nav>
-<a href="index.html" class="logo">Attri<span>vix</span></a>
+<a href="index.html" class="logo" aria-label="Attrivix home">Attri<span>vix</span></a>
 <div class="nav-links">
 <a href="index.html" class="nav-ghost">Home</a>
 <a href="ai-tools-rankings.html" class="nav-ghost">AI Tools Rankings</a>
 <a href="blog.html" class="nav-ghost">The CU Shortlist</a>
-<a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&amp;ep=pcard" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event','book_call_click',{event_category:'engagement',event_label:'nav'})">Book a Call</a>
+<a href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&amp;ep=pcard" class="nav-cta" target="_blank" rel="noopener" aria-label="Book a Call (opens in a new tab)" onclick="gtag('event','book_call_click',{event_category:'engagement',event_label:'nav'})">Book a Call</a>
 </div>
 </nav>
+<main id="content">
 <header class="page-header">
 <div class="eyebrow">Attrivix, Inc.</div>
 <h1>Privacy Policy</h1>
 <p>This policy explains what information Attrivix collects, how it is used, and the choices you have. It covers this website and, separately, how we handle credit union member data in the Attrivix product.</p>
 <p class="meta">Effective date: November 12, 2026</p>
+<p class="opt-out"><a href="#california">Do Not Sell or Share My Personal Information</a></p>
 </header>
 <article class="legal">
 <p>Attrivix, Inc. (“Attrivix,” “we,” “us,” or “our”) is a Delaware corporation. Our mailing address is 1701 East Cotati Avenue, Box 4005, Rohnert Park, CA 94928. The best way to reach us about this policy is <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a>. You can also use our <a href="support.html">support and contact page</a>.</p>
@@ -153,22 +166,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <li><strong>The CU Shortlist.</strong> The homepage, the AI Tools Rankings page, and the blog include a signup form for The CU Shortlist. Those forms collect first name, last name, and work email, and they submit that information to HubSpot (portal ID 246264806, form ID eb3aa62a-910b-4cea-953e-4f7518c44fd5) at <code>api.hsforms.com</code>.</li>
 <li><strong>Book a call.</strong> “Book a Call” and related links on the site go to Microsoft Bookings (outlook.office.com / bookings.cloud.microsoft). If you schedule a meeting, Microsoft Bookings collects the information you enter on that scheduling page, and we receive the booking so we can meet with you. We do not host that scheduling form on attrivix.com itself.</li>
 </ul>
-<p>We did not find a phone number collected on this website, and this site does not publish a phone number.</p>
+<p>We do not ask for a phone number on this website, and we do not publish one.</p>
 <h3>Information collected automatically</h3>
 <p>When you visit the site, our hosting provider and the tools listed in section 4 may automatically receive technical information such as your IP address, browser type, device information, referring URL, pages viewed, and the date and time of your visit. Some of those tools also set cookies or similar identifiers. See section 4 for the specific tools we use.</p>
 
 <h2 id="cookies">4. Cookies, analytics, and service providers</h2>
-<p>As of November 12, 2026, attrivix.com uses the following third-party tools and processors. The site does not include a cookie-consent banner.</p>
+<p>This website uses cookies and similar technologies, including cookies set by Attrivix and by the third-party tools listed below, to operate the site, remember preferences, and understand how the site is used. You can block or delete cookies in your browser settings. Doing so may affect some features, such as keeping you signed in to a third-party tool or remembering a chat session.</p>
 <ul>
-<li><strong>Google Analytics 4.</strong> Pages load Google’s gtag.js with measurement ID G-J4Y9Q9FTN3 and a <code>gtag('config', 'G-J4Y9Q9FTN3')</code> call. This is used to measure visits and events. The source also fires events named <code>book_call_click</code> and <code>newsletter_signup</code>. Google may set cookies and collect device, browser, and usage data as described in Google’s own documentation and privacy policy.</li>
-<li><strong>Microsoft Clarity.</strong> Public pages on this site, including the homepage, The CU Shortlist, the AI Tools Rankings page, this privacy policy, and the support page, load Microsoft Clarity with project ID xmjprhm4hb. Clarity records sessions (including clicks, scrolls, and mouse movement) to help us improve the site. We do not load the Clarity script on the one-pager.</li>
+<li><strong>Google Analytics 4.</strong> We use Google Analytics (measurement ID G-J4Y9Q9FTN3) to understand how people use the site, including when someone clicks Book a Call or subscribes to The CU Shortlist. Google may set cookies and collect device, browser, and usage data, as described in Google’s documentation and privacy policy.</li>
+<li><strong>Microsoft Clarity.</strong> Public pages on this site, including the homepage, The CU Shortlist, the AI Tools Rankings page, this privacy policy, and the support page, load Microsoft Clarity with project ID xmjprhm4hb. Clarity records sessions, including clicks, scrolls, and mouse movement, to help us improve the site. These recordings may also include information entered on the page or in chat, unless we have masked it. We do not load the Clarity script on the one-pager.</li>
 <li><strong>HubSpot.</strong> Public pages load the HubSpot tracking script <code>//js-na2.hs-scripts.com/246264806.js</code> (HubSpot portal ID 246264806). HubSpot live chat is on and is visible on every public page as a chat bubble at the bottom right. Chat messages and any details visitors give in chat go to HubSpot. The CU Shortlist forms described in section 3 also send first name, last name, and email to HubSpot’s forms API. HubSpot data is not used for advertising or retargeting, and we use no ads or retargeting.</li>
 <li><strong>Google Fonts.</strong> Pages load the DM Sans font from fonts.googleapis.com (and may request font files from fonts.gstatic.com). Google may receive your IP address and browser information when those files are requested.</li>
 <li><strong>Microsoft Bookings.</strong> If you open a Book a Call link, you leave attrivix.com for Microsoft’s scheduling service, which has its own terms and privacy policy.</li>
 <li><strong>Microsoft 365.</strong> Email sent to or from <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a> is hosted on Microsoft 365.</li>
 <li><strong>Website hosting.</strong> attrivix.com is served from GitHub Pages (GitHub, Inc.), with responses delivered through the Fastly CDN. Those providers may process request logs (such as IP address, user agent, and requested URL) in order to host and deliver the site.</li>
 </ul>
-<p>Links to X (x.com/Attrivix) and LinkedIn (linkedin.com/company/attrivix) appear in the footer. Those services receive information only if you follow the link, according to their own policies. We did not find other advertising pixels, such as a Meta or LinkedIn Insight pixel, in the page source.</p>
+<p>Links to X (x.com/Attrivix) and LinkedIn (linkedin.com/company/attrivix) appear in the footer. Those services receive information only if you follow the link, according to their own policies. We do not use advertising or retargeting pixels, such as the Meta pixel or the LinkedIn Insight Tag.</p>
 
 <h2 id="use">5. How we use website information</h2>
 <p>We use information collected on this website to:</p>
@@ -183,17 +196,17 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 <h2 id="share">6. How we share information</h2>
 <p>We share website information with the service providers listed in section 4 so they can provide their services to us (analytics, forms, chat, fonts, scheduling, email hosting, and website hosting). We may also share information if the law requires it, or in connection with a merger, sale, or other corporate transaction, subject to appropriate safeguards.</p>
-<p>We do not sell credit union member data from the Attrivix product. We do not sell personal information. Analytics cookies may count as “sharing” under California law; see section 10 for how to opt out.</p>
+<p>We do not sell credit union member data from the Attrivix product. We do not sell personal information. Some analytics cookies may count as “sharing” under California law; see section 10 for how to opt out.</p>
 
 <h2 id="retention">7. Retention</h2>
-<p>We keep personal information only as long as it is needed for the purposes in this policy, then we delete it. Google Analytics data is kept for 14 months, which is Google’s default.</p>
+<p>We keep personal information only as long as we need it for the purposes in this policy, to meet legal obligations, or to resolve disputes. When we no longer need it, we delete it or de-identify it where we can. For Google Analytics, Microsoft Clarity, HubSpot (forms and chat), Microsoft Bookings, Microsoft 365 email, and website hosting logs, we have not set a shorter period than the provider’s default.</p>
 
 <h2 id="security">8. Security</h2>
 <p>We take reasonable steps to protect personal information. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
 
 <h2 id="glba">9. Credit unions and nonpublic personal information</h2>
 <p>Credit unions are financial institutions. Their member information may be nonpublic personal information protected by the Gramm-Leach-Bliley Act and other banking privacy rules, and by the credit union’s own privacy notice.</p>
-<p>When Attrivix provides the product to a credit union, we handle that member information as a service provider to the credit union, not as the financial institution that collected it from the member. We process it only in the credit union’s Microsoft tenant, on the credit union’s instructions, and for the purposes set out in our agreement with that credit union. We do not disclose that member nonpublic personal information to third parties for our own independent marketing.</p>
+<p>When Attrivix provides the product to a credit union, we handle that member information as a service provider to the credit union, not as the financial institution that collected it from the member. Member data used in the product is processed in the credit union’s Microsoft tenant, on the credit union’s instructions, and for the purposes set out in our agreement with that credit union. We do not disclose that member nonpublic personal information to third parties for our own independent marketing.</p>
 <p>This website policy does not replace the credit union’s privacy notice to its members, and it does not give Attrivix the right to use member data in ways the agreement does not allow.</p>
 
 <h2 id="california">10. California privacy rights</h2>
@@ -208,14 +221,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <li>Not be discriminated against for exercising these rights.</li>
 </ul>
 <p>In the last 12 months, the categories of website personal information we have collected, as described in this policy, may include identifiers (such as name, email address, and IP address), commercial or internet activity information (such as pages viewed, events, and form submissions), and professional information (such as a work email address and, if you provide it, your title or credit union). Sources are you, your device and browser, and the service providers in section 4. We use that information for the purposes in section 5.</p>
-<p>To make a request, email <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a> with the subject line “California privacy request.” We will need enough information to verify your identity and, if you use an authorized agent, proof of the agent’s authority. We will respond as required by law.</p>
-<p>We don’t sell personal information. Analytics cookies may count as “sharing” under California law; you can opt out by emailing <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a> or by using Global Privacy Control.</p>
+<p>To make a request, email <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a>. You’re welcome to use a subject line like “California privacy request” so we can route it quickly. We will need enough information to verify your identity and, if you use an authorized agent, proof of the agent’s authority. We will respond as required by law.</p>
+<p>We do not sell personal information. Some analytics cookies may count as “sharing” under California law. To opt out, email <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a> and we will complete your request.</p>
 
 <h2 id="children">11. Children</h2>
 <p>This website and the Attrivix product are intended for credit union professionals and institutions. They are not directed to children under 16, and we do not knowingly collect personal information from children. If you believe a child has given us personal information, email <a href="mailto:patricia@attrivix.com">patricia@attrivix.com</a> and we will take appropriate steps to delete it.</p>
 
 <h2 id="changes">12. Changes to this policy</h2>
-<p>We may update this policy from time to time. When we do, we will post the revised policy on this page and update the effective date. Material changes are announced by updating the effective date on this page.</p>
+<p>We may update this policy from time to time. When we do, we will post the revised policy on this page and change the effective date at the top.</p>
 
 <h2 id="contact">13. Contact</h2>
 <p>Questions about this policy, requests to exercise privacy rights, or requests to unsubscribe from The CU Shortlist can be sent to:</p>
@@ -228,17 +241,19 @@ Rohnert Park, CA 94928<br>
 </address>
 <p>For other help, see our <a href="support.html">support and contact page</a>.</p>
 </article>
+</main>
 <footer>
-<a href="index.html" class="footer-logo">Attri<span>vix</span></a>
+<a href="index.html" class="footer-logo" aria-label="Attrivix home">Attri<span>vix</span></a>
 <div class="footer-text">Enterprise data layer for credit unions</div>
-<div class="footer-social"><span class="fs-label">Follow us</span><a href="https://x.com/Attrivix" target="_blank" rel="noopener" aria-label="Attrivix on X"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a><a href="https://www.linkedin.com/company/attrivix/" target="_blank" rel="noopener" aria-label="Attrivix on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+<div class="footer-social"><span class="fs-label">Follow us</span><a href="https://x.com/Attrivix" target="_blank" rel="noopener" aria-label="Attrivix on X (opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a><a href="https://www.linkedin.com/company/attrivix/" target="_blank" rel="noopener" aria-label="Attrivix on LinkedIn (opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
 <a href="ai-tools-rankings.html" class="footer-link">AI Tools Rankings</a>
 <a href="blog.html" class="footer-link">The CU Shortlist</a>
 <a href="privacy.html" class="footer-link">Privacy</a>
 <a href="support.html" class="footer-link">Support</a>
+<a href="#california" class="footer-link">Do Not Sell or Share My Personal Information</a>
 <a href="mailto:patricia@attrivix.com" class="footer-link">patricia@attrivix.com</a>
 </footer>
-<a id="sticky-cta" class="sticky-cta" href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&amp;ep=pcard" target="_blank" rel="noopener" aria-label="Book a 30-minute call with Patricia" onclick="gtag('event','book_call_click',{event_category:'engagement',event_label:'sticky'})">Book a 30-min call</a>
+<a id="sticky-cta" class="sticky-cta" href="https://outlook.office.com/bookwithme/user/55f0e52e15eb46078d0cf61525e25b28@attrivix.com?anonymous&amp;ep=pcard" target="_blank" rel="noopener" aria-label="Book a 30-minute call with Patricia (opens in a new tab)" onclick="gtag('event','book_call_click',{event_category:'engagement',event_label:'sticky'})">Book a 30-min call</a>
 <script>
 (function(){
 var cta=document.getElementById('sticky-cta');
