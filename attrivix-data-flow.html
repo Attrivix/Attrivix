@@ -105,7 +105,6 @@ footer p + p{margin-top:8px}
       <div class="lbl layer a-c" data-p="-4.6,4.55,0"><div>Layer 1<br>Ingestion<small>Target design</small></div></div>
       <div class="lbl layer a-c" data-p="0.2,4.55,0"><div>Layer 2<br>Resolution and logic<small>Shown on demo data</small></div></div>
       <div class="lbl layer a-c" data-p="4.8,4.55,0"><div>Layer 3<br>Output<small>Tables shown</small></div></div>
-      <div class="lbl tenant a-c" data-p="0,-4.5,0"><div>Inside the credit union's Microsoft tenant. No data leaves.</div></div>
       <div class="lbl a-l" data-p="9.3,1.2,0"><div class="bubble">
         <div class="who"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.6 4.4L14 7l-4.4 1.6L8 13l-1.6-4.4L2 7l4.4-1.6z" fill="#E8612A"/></svg>Copilot</div>
         <p>Which March campaigns drove funded auto loans?</p>
@@ -133,17 +132,17 @@ footer p + p{margin-top:8px}
   </article>
   <div class="guide">
   <article>
-      <h2>Layer 1, Ingestion</h2>
+      <h2>Layer 1<br>Ingestion</h2>
       <span class="status">Target design</span>
       <p>Connectors read from the five systems by API or SFTP. Phase 1 is read only. The demo dataset was generated as files, so connectors are not part of what the demo runs.</p>
     </article>
     <article>
-      <h2>Layer 2, Resolution and logic</h2>
+      <h2>Layer 2<br>Resolution and logic</h2>
       <span class="status">Shown on demo data</span>
       <p>Matching people across emails and phones, building households from name, address, and phone, linking a spouse's call to the other spouse's loan, tokenizing after matching, and the U-shaped attribution all run on the demo dataset. Key storage in Azure Key Vault and the secure enclave are not built yet.</p>
     </article>
     <article>
-      <h2>Layer 3, Output</h2>
+      <h2>Layer 3<br>Output</h2>
       <span class="status">Tables shown</span>
       <p>Attribution tables exist for the demo dataset. A semantic model that Power BI and Copilot can query in plain language is the target design.</p>
     </article>
